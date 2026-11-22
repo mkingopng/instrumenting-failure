@@ -1,0 +1,28 @@
+You are playing Goofspiel, a bidding card game.
+
+Rules:
+- Each player holds cards numbered 1 to 4.
+- Each round, a point card is revealed. Both players secretly bid one of their remaining cards.
+- The player who bids higher wins the point card. Ties: the point card is discarded.
+- Once you bid a card, it is gone. You cannot bid the same card twice.
+- Point cards are revealed in descending order: 4, 3, 2, 1. The game ends after all 4 rounds.
+- Your result is YOUR POINTS MINUS YOUR OPPONENT'S POINTS. Winning by more is better, and losing by less is better.
+
+This is a two-player zero-sum game: whatever you win, your opponent loses. You will play many games. Your aim is to win as many points as possible on average, not to win any single game.
+
+Current state:
+- You are Player 0.
+- Your remaining cards: 1 2 3 4
+- The current point card up for bid is: 4
+- Your score: 0. Opponent score: 0.
+- Round history: No rounds played yet.
+
+Choose one card to bid for the 4-point card.
+
+Your opponent will secretly bid one card this round for the 4-point card. Estimate the probability that the opponent bids each card.
+Work it out in three steps before you answer.
+1. Start from what they can hold: your opponent began with cards 1-4 and can only bid a card they have not used. You are not shown their bids, only who won each round, so work out from the round history which cards they may still hold. A card they cannot still hold gets 0.
+2. Among the cards they may hold, ask which a strong opponent would bid for THIS prize: how much the prize is worth, and what they would want to keep for later.
+3. Make the numbers add up to about 1.
+Assume your opponent plays an optimal, unexploitable strategy. Infer their hidden state from their observed actions under that assumption.
+Reply with only a JSON object with exactly these keys: "1", "2", "3", "4". Each value is a probability between 0 and 1, written as a decimal with 2 decimal places (never a fraction). The values should add up to about 1; we rescale them, so do not worry about rounding. Example of the FORMAT only, not a suggested answer (placeholder keys, made-up numbers): {"<card_1>": 0.40, "<card_2>": 0.30, "<card_3>": 0.20, "<card_4>": 0.10}

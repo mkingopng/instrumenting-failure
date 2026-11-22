@@ -1,0 +1,225 @@
+{
+  "anchors": {
+    "darkhex": {
+      "cfr_ref": {
+        "ci_high": 0.09470458497741772,
+        "ci_low": 0.034746556473723725,
+        "config_path": "configs/p6_sentinel/darkhex.yaml",
+        "drive_openings": [
+          0,
+          0
+        ],
+        "git_sha": "bdb32ca24de3f6395e168346cb708f5a37a29166",
+        "mean": 0.06472557072557072,
+        "n": 5,
+        "per_seed": [
+          0.04274170274170274,
+          0.09610389610389611,
+          0.056851851851851855,
+          0.04395604395604395,
+          0.08397435897435898
+        ],
+        "run_dir": "data/p6_sentinel/darkhex",
+        "sd": 0.024144224440118846,
+        "seat_mode": "fixed1",
+        "seeds": [
+          42,
+          43,
+          44,
+          45,
+          46
+        ]
+      }
+    },
+    "goofspiel": {
+      "cfr_ref": {
+        "ci_high": 0.1075460699470916,
+        "ci_low": 0.05688082481675971,
+        "config_path": "configs/p6_sentinel/goofspiel.yaml",
+        "drive_openings": [
+          1,
+          2,
+          0
+        ],
+        "git_sha": "bdb32ca24de3f6395e168346cb708f5a37a29166",
+        "mean": 0.08221344738192565,
+        "n": 5,
+        "per_seed": [
+          0.06412927350427351,
+          0.10738095238095238,
+          0.06064814814814815,
+          0.08125000000000002,
+          0.09765886287625418
+        ],
+        "run_dir": "data/p6_sentinel/goofspiel",
+        "sd": 0.02040215597924481,
+        "seat_mode": "fixed1",
+        "seeds": [
+          42,
+          43,
+          44,
+          45,
+          46
+        ]
+      }
+    },
+    "kuhn": {
+      "cfr_ref": {
+        "ci_high": 0.4492323010788909,
+        "ci_low": 0.31412198113908263,
+        "config_path": "configs/p6_sentinel/kuhn.yaml",
+        "drive_openings": [
+          1
+        ],
+        "git_sha": "bdb32ca24de3f6395e168346cb708f5a37a29166",
+        "mean": 0.38167714110898676,
+        "n": 5,
+        "per_seed": [
+          0.4520184446183479,
+          0.361278089118267,
+          0.4263651727694238,
+          0.3353575474970927,
+          0.3333664515418024
+        ],
+        "run_dir": "data/p6_sentinel/kuhn",
+        "sd": 0.054406957170081316,
+        "seat_mode": "fixed1",
+        "seeds": [
+          42,
+          43,
+          44,
+          45,
+          46
+        ]
+      }
+    },
+    "leduc": {
+      "cfr_ref": {
+        "ci_high": 0.6396107696643033,
+        "ci_low": 0.4572061943040121,
+        "config_path": "configs/p6_sentinel/leduc.yaml",
+        "drive_openings": [
+          1,
+          1,
+          1,
+          2,
+          2
+        ],
+        "git_sha": "bdb32ca24de3f6395e168346cb708f5a37a29166",
+        "mean": 0.5484084819841577,
+        "n": 5,
+        "per_seed": [
+          0.5793316710063618,
+          0.5938937216615616,
+          0.6214143571818433,
+          0.5058203479975388,
+          0.441582312073483
+        ],
+        "run_dir": "data/p6_sentinel/leduc",
+        "sd": 0.07345166471129236,
+        "seat_mode": "fixed1",
+        "seeds": [
+          42,
+          43,
+          44,
+          45,
+          46
+        ]
+      }
+    },
+    "liarsdice": {
+      "cfr_ref": {
+        "ci_high": 0.32231428407344487,
+        "ci_low": 0.27519466849604346,
+        "config_path": "configs/p6_sentinel/liarsdice.yaml",
+        "drive_openings": [
+          1,
+          9
+        ],
+        "git_sha": "bdb32ca24de3f6395e168346cb708f5a37a29166",
+        "mean": 0.29875447628474416,
+        "n": 5,
+        "per_seed": [
+          0.30807521495815265,
+          0.3221987797697371,
+          0.2760016898226471,
+          0.3046061871771445,
+          0.28289050969603946
+        ],
+        "run_dir": "data/p6_sentinel/liarsdice",
+        "sd": 0.018974382621049803,
+        "seat_mode": "fixed0",
+        "seeds": [
+          42,
+          43,
+          44,
+          45,
+          46
+        ]
+      }
+    }
+  },
+  "provenance": {
+    "basis": "sampled",
+    "cfr_iters": 1000,
+    "config_dir": "configs/p6_sentinel",
+    "estimand": "symmetry_class_mean",
+    "games": [
+      "darkhex",
+      "goofspiel",
+      "kuhn",
+      "leduc",
+      "liarsdice"
+    ],
+    "generated_utc": "2026-10-07T23:20:50.004019+00:00",
+    "n_hands": {
+      "darkhex": 60,
+      "goofspiel": 60,
+      "kuhn": 60,
+      "leduc": 60,
+      "liarsdice": 60
+    },
+    "numpy_version": "2.4.6",
+    "opponent": "cfr_ref",
+    "pyspiel_version": "2.0.2",
+    "run_root": "data/p6_sentinel",
+    "seeds": {
+      "darkhex": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ],
+      "goofspiel": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ],
+      "kuhn": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ],
+      "leduc": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ],
+      "liarsdice": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ]
+    },
+    "tremble_eps": 0.0001
+  }
+}

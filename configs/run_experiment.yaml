@@ -1,0 +1,72 @@
+# run_experiment: a split-topology experiment. One box runs the harness, every non-LM agent
+# and the solvers; a serving box runs vLLM for all LM inference. scripts/run_experiment.py
+# preflights each enabled model's endpoint and fails loudly if it is not served.
+#
+# This file is also the model roster scripts/scoreboard.py reads by default.
+#
+# It is an example of the two-machine layout, not a job of the paper: the paper's jobs are
+# rendered from the run_experiment_recycle_v*.yaml templates by scripts/collection_job.py.
+# Set ssh_host and the endpoint for your own machines before launching it with
+#   .venv/bin/python scripts/run_experiment.py --config configs/run_experiment.yaml
+models:
+  - id: Qwen/Qwen2.5-14B-Instruct
+    vllm_base_url: http://localhost:8000/v1
+    enabled: true
+  - id: allenai/OLMo-2-1124-13B-Instruct
+    vllm_base_url: http://localhost:8000/v1
+    enabled: true
+  - id: mistralai/Mistral-Nemo-Instruct-2407
+    vllm_base_url: http://localhost:8000/v1
+    enabled: true
+
+# Sweep shape: 5 games x 4 opponents x 5 seeds, N=1000 -> 100 parquet files per model.
+games: [kuhn, leduc, goofspiel, liarsdice, darkhex]
+opponents: [cfr_ref, bayesian, rl, always_bet]
+agent0: lm
+elicitation_mode: sibling
+max_retries: 3
+# A temperature above 0 also activates the per-request seed, so retries stay reproducible.
+temperature: 0.0
+n_hands: 1000
+n_seeds: 5
+seed: 42
+# Shard-worker pool width. All arms of one experiment must run at the same width: batch
+# composition changes reduction order in batched kernels, so output can vary with concurrency
+# even at temperature 0. Past the point where the longest single shard sets the wall clock,
+# a wider pool buys nothing.
+max_workers: 80
+# Per-request HTTP ceiling on every LM call. It was derived from the belief token budget and
+# the slowest decode rate measured at this max_workers, then doubled, so it fires on a stalled
+# request and not a slow one. Re-measure it if max_workers changes.
+request_timeout_s: 900
+
+# How the sibling belief call is decoded (keys of lmopt.agents.lm_vllm.BELIEF_PROTOCOLS):
+#   free                    - unconstrained generation
+#   schema_reasoning_belief - constrained to {reasoning, belief} by structured outputs
+# This is a manipulated variable: arms collected under different protocols are not
+# comparable, and the value is stamped on every row (`belief_protocol` column).
+belief_protocol: free
+runner: local-pool
+backend: dgx-spark-vllm              # backend pin for this run, recorded on every LM row
+# Swap-then-verify control of the serving box (lmopt.serving.control). The code default when
+# this block is absent is off; only a config that sets it can stop or start a serving unit.
+serving:
+  auto_swap: true                    # swap the served model on a preflight mismatch, then verify
+  ssh_host: serving-box              # hostname of the serving box
+  unit_template: "vllm-roster@"      # user-scope systemd template instance
+  timeout_s: 900                     # swap budget: stop + start + poll until the requested id is served
+  stop_on_teardown: true             # stop the served unit at completion, on abort and on SIGTERM/SIGINT
+# Run scripts/exact_policy_pass.py for each arm after its sweep, against the same endpoint,
+# writing <out_dir>/exact_policy.csv. Off unless a config sets it.
+exact_policy:
+  enabled: true
+# Per-model output subdir is out_root/<model id after the last '/', lowercased>.
+out_root: data/run_experiment
+cfr_iters: 1000
+rl_iterations: 1000
+cfr_cache_dir: data/cfr_policies
+rl_cache_dir: data/rl_policies
+wandb:
+  enabled: false
+  project: lmopt
+  mode: online

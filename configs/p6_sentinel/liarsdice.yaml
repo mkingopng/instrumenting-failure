@@ -1,0 +1,44 @@
+# The uniform-random agent's own off-path total variation on liarsdice: the P6 anchor
+# for every liarsdice cell. The five games' runs are the source of
+# `configs/anchors/p6_sentinel_anchors.json`, the reference an LM's P6 TVD is judged against.
+#
+# One config per game because a sweep carries one `drive_openings` list and one
+# `seat_mode`, and the off-path run's opening and seat differ by game. The opening
+# and the seat here are the v7 off-path job's own, from `scripts/collection_job.py`'s
+# `OFFPATH_SWEEPS`; a test asserts the five configs still agree with it, so the
+# anchor cannot come to describe a subgame the LM never played.
+#
+# Everything else mirrors `configs/run_experiment_recycle_v7_offpath.yaml`: the same
+# probe type, opponent, memory level, hand count, reference iteration count and
+# reference caches. The seed count is the one deviation, and it is deliberate: the
+# collection job runs one seed per job because a seed is the LM's replicate, while
+# the anchor needs an interval of its own, so it takes five.
+#
+# No model, no GPU. RUN:
+#   .venv/bin/python scripts/run_sweep.py --config configs/p6_sentinel/liarsdice.yaml
+
+games: [liarsdice]
+opponents: [cfr_ref]
+
+agent0: random              # the sentinel; no model, no vllm_base_url, no GPU
+seat_mode: fixed0
+
+probe:
+  type: offpath_drive
+drive_openings: [1, 9]
+
+memory_rung: M0
+n_hands: 60
+n_seeds: 5
+seed: 42
+
+cfr_iters: 1000
+rl_iterations: 1000
+cfr_cache_dir: data/cfr_policies
+rl_cache_dir: data/rl_policies
+require_cache_hit: true      # a cold reference cache fails the sweep instead of solving
+
+max_workers: 1               # serial: this is a reference measurement, not a benchmark
+backend: cpu-random-sentinel  # provenance, not a default inherited from the GPU box
+
+out_dir: data/p6_sentinel/liarsdice

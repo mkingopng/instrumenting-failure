@@ -1,0 +1,13 @@
+# Synthetic roster fixture for scoreboard tests: exactly the three models the
+# scoreboard test fixtures under tests/fixtures/scoreboard/<model>/ hold, so a test's
+# expected cell counts are independent of the real configs/run_experiment.yaml's
+# current content. Do not point tests at the production file; it can change under them.
+models:
+  - id: Qwen/Qwen2.5-14B-Instruct
+    enabled: true
+  - id: allenai/OLMo-2-1124-13B-Instruct
+    enabled: true
+  - id: mistralai/Mistral-Nemo-Instruct-2407
+    enabled: true
+  - id: EleutherAI/pythia-12b
+    enabled: false

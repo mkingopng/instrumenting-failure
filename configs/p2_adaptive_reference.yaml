@@ -1,0 +1,20 @@
+# p2_adaptive_reference: the adaptive reference (lmopt.agents.adaptive) through the ordinary sweep on CPU, every
+# game and opponent of the paper's arms, 2000 hands x 10 seeds, the M1 arms' shape (seat alternate, seeds 42-51).
+# Its P2 shrinkage delta per (game, opponent) cell is the P2 ceiling the LM arms are read against
+# (configs/anchors/p2_adaptive_anchors.json). No model, no GPU.
+games: [kuhn, leduc, goofspiel, liarsdice, darkhex]
+opponents: [cfr_ref, bayesian, rl, always_bet]
+agent0: adaptive
+memory_rung: M1               # the agent conditions on every earlier hand; the analysis reads P2 at M1 and M2 only
+seat_mode: alternate
+n_hands: 2000
+n_seeds: 10
+seed: 42
+cfr_iters: 1000
+rl_iterations: 1000
+cfr_cache_dir: data/cfr_policies
+rl_cache_dir: data/rl_policies
+require_cache_hit: true
+max_workers: 8
+backend: cpu-adaptive-reference
+out_dir: data/p2_adaptive_reference

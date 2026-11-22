@@ -1,0 +1,47 @@
+{
+  "game": "darkhex",
+  "instruction": {
+    "intro": "You are playing Dark Hex as {color}.",
+    "goal": [
+      "Your goal: {goal}. The first player to complete their connection wins 1 point and the other player loses 1 point.",
+      {
+        "wrapper": "objective",
+        "prefix": " ",
+        "fields": {
+          "unit": "game",
+          "currency": "points"
+        }
+      }
+    ],
+    "board_header": "Board ({num_rows}×{num_cols} grid, columns A-{last_col}, rows 1-{num_rows}):",
+    "legend": "  [Y]=your stone  [E]=discovered enemy stone  [ ]=unknown",
+    "discovery_note": "Important: you cannot see where your opponent has played unless you move\nthere yourself. If you move to an occupied cell you discover it is taken\n— your stone is not placed — and you get to move again.",
+    "move_count": "Total moves taken so far in the game (both players combined, counting any collision retries as separate moves): {move_count}.",
+    "own_history": "Your own move attempts so far, in order: {history_str}. (An attempt on an already-occupied cell does not place a stone there but still counts and appears here — this list does not show your opponent's moves, only yours.)",
+    "available_moves": "Available moves: {legal_strs}.",
+    "action_suffix": "\nChoose one move from: {labels}.\nRespond with exactly the move label (e.g. A1).\nYour move: "
+  },
+  "action_vocabulary": {
+    "corner_names": {
+      "0": "top-left",
+      "1": "top-right",
+      "2": "bottom-left",
+      "3": "bottom-right"
+    }
+  },
+  "belief_question": [
+    "\n\nFor each unknown cell ({labels}), estimate the probability your opponent ALREADY has a stone there. These are independent (each 0 to 1) and need NOT sum to 1. You cannot see the opponent's stones directly.\nWork it out in three steps before you answer.\n1. Work out how many stones your opponent has placed: the total move count, minus your own attempts, is the number of attempts they have made.\n2. Ask where a strong opponent would have put those stones, given their goal is the opposite connection to yours, and given every cell you have already discovered.\n3. Give each unknown cell its own probability.\n",
+    {
+      "wrapper": "belief_assumption"
+    },
+    {
+      "wrapper": "belief_format_head"
+    },
+    {
+      "wrapper": "belief_format_example"
+    },
+    "{{{belief_exemplar}}}"
+  ],
+  "belief_exemplar": "\"<cell_{i}>\": {value}",
+  "display_scale": 1
+}

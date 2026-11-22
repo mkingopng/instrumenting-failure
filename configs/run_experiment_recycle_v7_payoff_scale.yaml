@@ -1,0 +1,53 @@
+# run_experiment_recycle_v7_payoff_scale: the payoff_scale probe run, paired to the M0 run of the same
+# model and seed: same seed, seat_mode, memory level and opponents, first 100 hands.
+# The prompt states every payoff magnitude scaled by a fixed factor; the game, seats and scoring reference are unchanged.
+# One job is one seed of one model on one H200. Real jobs render n_seeds 1 and a
+# distinct out_root per array index.
+# Placeholders filled by scripts/collection_job.py:
+#   __MODEL_ID__ __REVISION__ __PORT__ __SEED__ __N_HANDS__ __N_SEEDS__ __OUT_ROOT__ __PILOT_DIR__ __GAMES__
+# __GAMES__ is the games for which the prompt-variant registry holds a payoff_scale variant.
+# The exact-policy pass is off: variant-rendered rows are outside the canonical population.
+models:
+  - id: __MODEL_ID__
+    vllm_base_url: http://localhost:__PORT__/v1
+    enabled: true
+    pilot_dir: __PILOT_DIR__
+    served_weights_revision: __REVISION__
+
+games: __GAMES__
+opponents: [cfr_ref, bayesian, rl, always_bet]
+probe:
+  type: payoff_scale
+agent0: lm
+elicitation_mode: sibling
+max_retries: 3
+temperature: 0.0
+n_hands: __N_HANDS__
+n_seeds: __N_SEEDS__
+seed: __SEED__
+seat_mode: alternate
+memory_rung: __MEMORY_RUNG__
+memory_window_k: 5
+max_workers: 32
+request_timeout_s: 900
+belief_protocol: free
+runner: local-pool
+backend: katana-vllm
+serving:
+  provider: pbs-injob
+  serving_env:
+    vllm: "0.31.0"
+    torch: "2.13.0"
+    python: "3.13"
+exact_policy:
+  enabled: false
+out_root: __OUT_ROOT__
+cfr_iters: 1000
+rl_iterations: 1000
+cfr_cache_dir: data/cfr_policies
+rl_cache_dir: data/rl_policies
+require_cache_hit: true                # the sweep's parent process fails on a cold reference cache instead of solving
+wandb:
+  enabled: false
+  project: lmopt
+  mode: online

@@ -1,0 +1,49 @@
+{
+  "game": "liarsdice",
+  "instruction": {
+    "rules": [
+      "You are playing Liar's Dice, a two-player bluffing game.\n\nRules:\n- Each player secretly rolls 1 six-sided die (faces 1–6). There are two dice in play: yours, which you can see, and your opponent's, which you cannot.\n- A 6 IS WILD: a die showing 6 counts as EVERY face.\n- Players alternate making bids. A bid \"COUNT FACE\" claims that at least COUNT of the two dice show FACE, where any 6 also counts as FACE. Example: if the dice are 6 and 3, the bid \"2 3\" is TRUE (the 3, plus the wild 6).\n- Each new bid must be strictly higher than the previous (higher count OR same count with higher face).\n- Instead of bidding, you may CHALLENGE your opponent's last bid.\n- CHALLENGE resolution: both dice are revealed. If the last bid is true the bidder wins 1 point. If it is false the challenger wins 1 point.\n- Highest possible bid: 2 6. After it, the only legal response is to CHALLENGE.",
+      {
+        "wrapper": "objective",
+        "prefix": "\n\n",
+        "fields": {
+          "unit": "hand",
+          "currency": "points"
+        }
+      }
+    ],
+    "situation_facing_bid": "The current bid is: at least {last_count} dice show {last_face}. You can raise this bid or {CHALLENGE} it.",
+    "situation_facing_max_bid": "The current bid is: at least {last_count} dice show {last_face}. That is the highest possible bid, so you cannot raise it.",
+    "action_only_clause": "Output ONLY your answer above — no explanation, no reasoning, nothing else."
+  },
+  "action_vocabulary": {
+    "CHALLENGE": "CHALLENGE",
+    "parse_synonyms": {
+      "CHALLENGE": [
+        "LIAR"
+      ]
+    }
+  },
+  "belief_question": [
+    "\n\nYour die shows {own_die}. What is your probability distribution over your opponent's die value?\nWork it out in three steps before you answer.\n1. Start from the roll alone: every face of their die is equally likely, and your own die tells you nothing about theirs.\n",
+    {
+      "wrapper": "belief_update_steps"
+    },
+    "Remember that a 6 is wild, so a bid on any face is also supported by a 6.\n3. Make the numbers add up to about 1.\n",
+    {
+      "wrapper": "belief_assumption"
+    },
+    {
+      "wrapper": "belief_format_head"
+    },
+    {
+      "wrapper": "belief_format_sum"
+    },
+    {
+      "wrapper": "belief_format_example"
+    },
+    "{belief_exemplar}"
+  ],
+  "belief_exemplar": "{\"<face_A>\": 0.05, \"<face_B>\": 0.10, \"<face_C>\": 0.15, \"<face_D>\": 0.20, \"<face_E>\": 0.25, \"<face_F>\": 0.25}",
+  "display_scale": 1
+}

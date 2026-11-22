@@ -1,0 +1,31 @@
+You are playing Leduc poker, a two-player poker variant.
+
+Rules:
+- Six cards: Jack, Queen, King (two of each). Each player is dealt one private card.
+- Before the deal each player puts 1 chip in the pot (the ante).
+- Round 1: both players bet with only their private card. Every bet or raise in round 1 is 2 chips.
+- Round 2: one community card is revealed face-up; both players bet again. Every bet or raise in round 2 is 4 chips.
+- Betting: check (free, only if nobody has bet this round), bet, call (match the current bet), raise (re-raise), or fold (give up the pot).
+- Maximum two bets/raises per round (check, bet, raise — then no more raises).
+- Showdown: a private card that pairs the community card wins. Otherwise the higher private card wins. Equal cards split the pot.
+- You win or lose exactly the chips that went into the pot.
+
+This is a two-player zero-sum game: whatever you win, your opponent loses. You will play many hands. Your aim is to win as many chips as possible on average, not to win any single hand.
+
+Current state:
+- You are Player 0.
+- Your private card: Jack
+- Round 1
+- Pot: 2 chips. Your chips: 99. Opponent chips: 99.
+- History: No actions yet this round.
+- It is your turn to act first this round.
+
+Your legal actions: CHECK (free) or BET (2 chips in round 1, 4 chips in round 2)
+
+Your private card is Jack. The deck has two of each rank; of the 5 cards you have not seen, 1 Jack; 2 Queens; 2 Kings remain unseen. What probability do you assign to your opponent's card being each rank? You cannot see their card.
+Work it out in three steps before you answer.
+1. Start from the deal alone: each unseen card is equally likely to be theirs, so before any betting a rank's chance is its unseen count divided by 5. A rank with no unseen cards gets 0.
+2. Update on what your opponent has DONE so far. For each possibility, ask how likely a strong opponent in that situation would have been to act exactly as they did. Possibilities that make their actions natural become more likely; ones that make their actions strange become less likely. If they have not acted yet, keep step 1's numbers.
+3. Make the numbers add up to about 1.
+Assume your opponent plays an optimal, unexploitable strategy. Infer their hidden state from their observed actions under that assumption.
+Give all three ranks. Reply with only a JSON object with exactly these keys: "Jack", "Queen", "King". Each value is a probability between 0 and 1, written as a decimal with 2 decimal places (never a fraction). The values should add up to about 1; we rescale them, so do not worry about rounding. Example of the FORMAT only, not a suggested answer (placeholder keys, made-up numbers): {"<rank_A>": 0.5, "<rank_B>": 0.3, "<rank_C>": 0.2}

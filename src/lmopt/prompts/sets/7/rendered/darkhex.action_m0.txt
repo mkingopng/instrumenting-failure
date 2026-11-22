@@ -1,0 +1,20 @@
+You are playing Dark Hex as Black.
+Your goal: connect the top row to the bottom row. The first player to complete their connection wins 1 point and the other player loses 1 point. This is a two-player zero-sum game: whatever you win, your opponent loses. You will play many games. Your aim is to win as many points as possible on average, not to win any single game.
+
+Board (2×2 grid, columns A-B, rows 1-2):
+  [Y]=your stone  [E]=discovered enemy stone  [ ]=unknown
+     A    B
+  1  [ ]  [ ]
+  2  [ ]  [ ]
+
+Important: you cannot see where your opponent has played unless you move
+there yourself. If you move to an occupied cell you discover it is taken
+— your stone is not placed — and you get to move again.
+
+Total moves taken so far in the game (both players combined, counting any collision retries as separate moves): 0.
+Your own move attempts so far, in order: none yet. (An attempt on an already-occupied cell does not place a stone there but still counts and appears here — this list does not show your opponent's moves, only yours.)
+
+Available moves: A1 (top-left), B1 (top-right), A2 (bottom-left), B2 (bottom-right).
+
+
+Your legal responses right now: A1, B1, A2, B2. Reply with exactly one of those, copied exactly, and nothing else. No explanation and no reasoning.

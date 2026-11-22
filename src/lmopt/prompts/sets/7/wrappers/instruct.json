@@ -1,0 +1,11 @@
+{
+  "objective": "This is a two-player zero-sum game: whatever you win, your opponent loses. You will play many {unit}s. Your aim is to win as many {currency} as possible on average, not to win any single {unit}.",
+  "legal_response_one": "Your only legal response right now is: {label}.",
+  "legal_response_many": "Your legal responses right now: {labels}.",
+  "legal_response_tail": " Reply with exactly one of those, copied exactly, and nothing else. No explanation and no reasoning.",
+  "belief_update_steps": "2. Update on what your opponent has DONE so far. For each possibility, ask how likely a strong opponent in that situation would have been to act exactly as they did. Possibilities that make their actions natural become more likely; ones that make their actions strange become less likely. If they have not acted yet, keep step 1's numbers.\n",
+  "belief_assumption": "Assume your opponent plays an optimal, unexploitable strategy. Infer their hidden state from their observed actions under that assumption.\n",
+  "belief_format_head": "Reply with only a JSON object with exactly these keys: {belief_keys}. Each value is a probability between 0 and 1, written as a decimal with 2 decimal places (never a fraction). ",
+  "belief_format_sum": "The values should add up to about 1; we rescale them, so do not worry about rounding. ",
+  "belief_format_example": "Example of the FORMAT only, not a suggested answer (placeholder keys, made-up numbers): "
+}

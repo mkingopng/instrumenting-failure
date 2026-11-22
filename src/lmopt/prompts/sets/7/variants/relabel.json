@@ -1,0 +1,62 @@
+{
+  "games": {
+    "kuhn": {
+      "tokens": {
+        "FOLD": "YIELD",
+        "CALL": "MATCH",
+        "CHECK": "WAIT",
+        "BET": "STAKE"
+      },
+      "synonyms": {
+        "CHECK": [
+          "HOLD"
+        ]
+      }
+    },
+    "leduc": {
+      "tokens": {
+        "FOLD": "YIELD",
+        "CALL": "MATCH",
+        "RAISE": "PUSH",
+        "CHECK": "WAIT",
+        "BET": "STAKE"
+      },
+      "synonyms": {
+        "CHECK": [
+          "HOLD"
+        ]
+      }
+    },
+    "goofspiel": {
+      "card_labels": {
+        "1": "ONE",
+        "2": "TWO",
+        "3": "THREE",
+        "4": "FOUR",
+        "5": "FIVE",
+        "6": "SIX"
+      },
+      "phrases": {
+        "cards numbered 1 to {num_cards}": "cards named {first_card} to {last_card}",
+        "cards 1-{num_cards}": "cards {first_card} to {last_card}"
+      }
+    },
+    "liarsdice": {
+      "tokens": {
+        "CHALLENGE": "DOUBT"
+      },
+      "synonyms": {
+        "CHALLENGE": [
+          "BLUFF"
+        ]
+      }
+    },
+    "darkhex": {
+      "column_labels": "PQRSTUVWXYZABCDEFGHIJKLMNO",
+      "phrases": {
+        "columns A-": "columns P-",
+        "(e.g. A1)": "(e.g. P1)"
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "game": "goofspiel",
+  "instruction": {
+    "rules": [
+      "You are playing Goofspiel, a bidding card game.\n\nRules:\n- Each player holds cards numbered 1 to {num_cards}.\n- Each round, a point card is revealed. Both players secretly bid one of their remaining cards.\n- The player who bids higher wins the point card. Ties: the point card is discarded.\n- Once you bid a card, it is gone. You cannot bid the same card twice.\n- Point cards are revealed in descending order: {descending}. The game ends after all {num_cards} rounds.\n- Your result is YOUR POINTS MINUS YOUR OPPONENT'S POINTS. Winning by more is better, and losing by less is better.",
+      {
+        "wrapper": "objective",
+        "prefix": "\n\n",
+        "fields": {
+          "unit": "game",
+          "currency": "points"
+        }
+      }
+    ],
+    "action_suffix": "\n\nRespond with exactly one number — your bid card from your hand: {hand_str}",
+    "action_only_clause": "Output ONLY your answer above — no explanation, no reasoning, nothing else."
+  },
+  "action_vocabulary": {},
+  "belief_question": [
+    "\n\nYour opponent will secretly bid one card this round{prize}. Estimate the probability that the opponent bids each card.\nWork it out in three steps before you answer.\n1. Start from what they can hold: your opponent began with cards 1-{num_cards} and can only bid a card they have not used. You are not shown their bids, only who won each round, so work out from the round history which cards they may still hold. A card they cannot still hold gets 0.\n2. Among the cards they may hold, ask which a strong opponent would bid for THIS prize: how much the prize is worth, and what they would want to keep for later.\n3. Make the numbers add up to about 1.\n",
+    {
+      "wrapper": "belief_assumption"
+    },
+    {
+      "wrapper": "belief_format_head"
+    },
+    {
+      "wrapper": "belief_format_sum"
+    },
+    {
+      "wrapper": "belief_format_example"
+    },
+    "{{{belief_exemplar}}}"
+  ],
+  "belief_exemplar": "\"<card_{i}>\": {value:.2f}",
+  "display_scale": 1
+}

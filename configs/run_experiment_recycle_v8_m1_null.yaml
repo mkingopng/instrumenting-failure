@@ -1,0 +1,55 @@
+# run_experiment_recycle_v8_m1_null: the null rerun of the M1 condition, the canonical prompt over the first hands only.
+# Experiment 8: temperature 0.2 and the per-model action_top_logprobs key; every other resolved key is experiment 7's.
+# It is the floor of the memory divergence a M1 probe arm carries: `scripts/probe_scores.py --null` pairs it with the base arm's
+# first hands exactly as a probe arm is paired. A diagnostic arm, never a scoreboard cell: the kind is flagged diagnostic in
+# scripts/collection_job.py and this template carries the marker, which the scoreboard refuses.
+# One job is one seed of one model on one H200. Real jobs render n_seeds 1 and a
+# distinct out_root per array index; pilot jobs render 20 hands x 5 seeds with an
+# out_root under data/pilot.
+# Placeholders filled by scripts/collection_job.py:
+#   __MODEL_ID__ __REVISION__ __PORT__ __SEED__ __N_HANDS__ __N_SEEDS__ __OUT_ROOT__ __PILOT_DIR__ __GAMES__ __ACTION_TOP_LOGPROBS__
+# The exact-policy pass is off at M1; the M0 run supplies the hand-1 readout.
+models:
+  - id: __MODEL_ID__
+    vllm_base_url: http://localhost:__PORT__/v1
+    enabled: true
+    pilot_dir: __PILOT_DIR__
+    served_weights_revision: __REVISION__
+
+games: __GAMES__
+opponents: [cfr_ref, bayesian, rl, always_bet]
+diagnostic: true                       # copied into the arm's condition block, which the scoreboard refuses; absent on every scoreboard template
+agent0: lm
+elicitation_mode: sibling
+max_retries: 3
+temperature: 0.2
+action_top_logprobs: __ACTION_TOP_LOGPROBS__
+n_hands: __N_HANDS__
+n_seeds: __N_SEEDS__
+seed: __SEED__
+seat_mode: alternate
+memory_rung: M1
+memory_window_k: 5
+max_workers: 32
+request_timeout_s: 900
+belief_protocol: free
+runner: local-pool
+backend: katana-vllm
+serving:
+  provider: pbs-injob
+  serving_env:
+    vllm: "0.31.0"
+    torch: "2.13.0"
+    python: "3.13"
+exact_policy:
+  enabled: false
+out_root: __OUT_ROOT__
+cfr_iters: 1000
+rl_iterations: 1000
+cfr_cache_dir: data/cfr_policies
+rl_cache_dir: data/rl_policies
+require_cache_hit: true                # the sweep's parent process fails on a cold reference cache instead of solving
+wandb:
+  enabled: false
+  project: lmopt
+  mode: online

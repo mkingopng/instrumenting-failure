@@ -1,0 +1,52 @@
+# run_experiment_recycle_v8_m2: experiment 8, memory level M2 (summary plus last 5 hands transcript), all five games x four opponents, sampled at temperature 0.2.
+# Experiment 8 differs from its experiment 7 counterpart in these resolved keys and no others: temperature (0.0 to 0.2),
+# action_top_logprobs (absent to the per-model value filled by scripts/collection_job.py, null when the model has none set) and, where noted,
+# exact_policy.enabled. Prompt set 7 is unchanged. Out root and pilot directory differ because they are placeholders.
+# One job is one seed of one model on one H200. Placeholders filled by scripts/collection_job.py:
+#   __MODEL_ID__ __REVISION__ __PORT__ __SEED__ __N_HANDS__ __N_SEEDS__ __OUT_ROOT__ __PILOT_DIR__ __ACTION_TOP_LOGPROBS__
+#   __GAMES__
+# The exact-policy pass is off at M2; the M0 run supplies the hand-1 readout.
+# Shared with experiment 7 on purpose: the reference caches (cfr_cache_dir, rl_cache_dir) and, where the kind uses them, the off-path sweep table and drive openings, configs/p6_sentinel and the anchor files.
+models:
+  - id: __MODEL_ID__
+    vllm_base_url: http://localhost:__PORT__/v1
+    enabled: true
+    pilot_dir: __PILOT_DIR__
+    served_weights_revision: __REVISION__
+
+games: __GAMES__
+opponents: [cfr_ref, bayesian, rl, always_bet]
+agent0: lm
+elicitation_mode: sibling
+max_retries: 3
+temperature: 0.2
+action_top_logprobs: __ACTION_TOP_LOGPROBS__
+n_hands: __N_HANDS__
+n_seeds: __N_SEEDS__
+seed: __SEED__
+seat_mode: alternate
+memory_rung: M2
+memory_window_k: 5
+max_workers: 32
+request_timeout_s: 900
+belief_protocol: free
+runner: local-pool
+backend: katana-vllm
+serving:
+  provider: pbs-injob
+  serving_env:
+    vllm: "0.31.0"
+    torch: "2.13.0"
+    python: "3.13"
+exact_policy:
+  enabled: false
+out_root: __OUT_ROOT__
+cfr_iters: 1000
+rl_iterations: 1000
+cfr_cache_dir: data/cfr_policies
+rl_cache_dir: data/rl_policies
+require_cache_hit: true                # the sweep's parent process fails on a cold reference cache instead of solving
+wandb:
+  enabled: false
+  project: lmopt
+  mode: online

@@ -1,0 +1,29 @@
+You are playing Goofspiel, a bidding card game.
+
+Rules:
+- Each player holds cards numbered 1 to 4.
+- Each round, a point card is revealed. Both players secretly bid one of their remaining cards.
+- The player who bids higher wins the point card. Ties: the point card is discarded.
+- Once you bid a card, it is gone. You cannot bid the same card twice.
+- Point cards are revealed in descending order: 4, 3, 2, 1. The game ends after all 4 rounds.
+- Your result is YOUR POINTS MINUS YOUR OPPONENT'S POINTS. Winning by more is better, and losing by less is better.
+
+This is a two-player zero-sum game: whatever you win, your opponent loses. You will play many games. Your aim is to win as many points as possible on average, not to win any single game.
+
+Current state:
+- You are Player 0.
+- Your remaining cards: 1 2 3 4
+- The current point card up for bid is: 4
+- Your score: 0. Opponent score: 0.
+- Round history: No rounds played yet.
+
+Choose one card to bid for the 4-point card.
+
+Your match so far, against the same opponent in every game:
+- 4 games played. Your total: -1 point. Last game: +1 point.
+- Game 1 (your result +2 points): Current player: 0 / P0 hand: 1 2 3 4 / P0 action sequence: / Point card sequence: 4 / Win sequence: / Points: 0 0 / Terminal?: 0 -> you chose 1
+- Game 2 (your result -4 points): Current player: 0 / P0 hand: 1 2 3 4 / P0 action sequence: / Point card sequence: 4 / Win sequence: / Points: 0 0 / Terminal?: 0 -> you chose 2
+- Game 3 (your result +0 points): Current player: 0 / P0 hand: 1 2 3 4 / P0 action sequence: / Point card sequence: 4 / Win sequence: / Points: 0 0 / Terminal?: 0 -> you chose 3
+- Game 4 (your result +1 point): Current player: 0 / P0 hand: 1 2 3 4 / P0 action sequence: / Point card sequence: 4 / Win sequence: / Points: 0 0 / Terminal?: 0 -> you chose 4
+
+Your legal responses right now: 1, 2, 3, 4. Reply with exactly one of those, copied exactly, and nothing else. No explanation and no reasoning.

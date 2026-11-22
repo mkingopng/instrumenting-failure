@@ -1,0 +1,52 @@
+{
+  "game": "kuhn",
+  "instruction": {
+    "rules": [
+      "You are playing Kuhn poker, a simplified card game.\n\nRules:\n- {num_ranks} cards: {rank_range_desc}.\n- Each player is dealt one card secretly. {n_spare} card{spare_plural} not in play.\n- Before the deal each player puts 1 chip in the pot (the ante).\n- Player 0 acts first and may CHECK (free) or BET (stake 1 chip).\n- After a CHECK, the other player may CHECK or BET (stake 1 chip). After a BET, the other player may CALL (stake 1 chip to match, go to showdown) or FOLD (give up the pot).\n- If nobody bets, or a bet is matched, the higher card wins the pot.\n- The winner gains 1 chip if nobody bet or someone gave up the pot, and 2 chips if a bet was matched. The loser loses the same amount.",
+      {
+        "wrapper": "objective",
+        "prefix": "\n\n",
+        "fields": {
+          "unit": "hand",
+          "currency": "chips"
+        }
+      }
+    ],
+    "options_facing_bet": "{FOLD} (give up the pot) or {CALL} (match the bet and go to showdown)",
+    "options_first": "{CHECK} (free, pass to opponent) or {BET} (stake 1 chip)",
+    "options_after_check": "{CHECK} (free, pass back) or {BET} (stake 1 chip)"
+  },
+  "action_vocabulary": {
+    "FOLD": "FOLD",
+    "CALL": "CALL",
+    "CHECK": "CHECK",
+    "BET": "BET",
+    "parse_synonyms": {
+      "CHECK": [
+        "PASS"
+      ]
+    }
+  },
+  "belief_question": [
+    "\n\nYour card is {own_name}. What probability do you assign to your opponent holding each of the other {num_other_cards} cards? You cannot see their card.\nWork it out in three steps before you answer.\n1. Start from the deal alone: you hold the {own_name}, so your opponent holds one of the other {num_other_cards} cards, and the deal makes them equally likely.\n",
+    {
+      "wrapper": "belief_update_steps"
+    },
+    "3. Make the numbers add up to about 1.\n",
+    {
+      "wrapper": "belief_assumption"
+    },
+    {
+      "wrapper": "belief_format_head"
+    },
+    {
+      "wrapper": "belief_format_sum"
+    },
+    {
+      "wrapper": "belief_format_example"
+    },
+    "{belief_exemplar}"
+  ],
+  "belief_exemplar": "{\"<other_card_A>\": 0.7, \"<other_card_B>\": 0.3}",
+  "display_scale": 1
+}

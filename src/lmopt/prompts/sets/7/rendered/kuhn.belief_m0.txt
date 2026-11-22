@@ -1,0 +1,28 @@
+You are playing Kuhn poker, a simplified card game.
+
+Rules:
+- Three cards: Jack (lowest), Queen, King (highest).
+- Each player is dealt one card secretly. The third card is not in play.
+- Before the deal each player puts 1 chip in the pot (the ante).
+- Player 0 acts first and may CHECK (free) or BET (stake 1 chip).
+- After a CHECK, the other player may CHECK or BET (stake 1 chip). After a BET, the other player may CALL (stake 1 chip to match, go to showdown) or FOLD (give up the pot).
+- If nobody bets, or a bet is matched, the higher card wins the pot.
+- The winner gains 1 chip if nobody bet or someone gave up the pot, and 2 chips if a bet was matched. The loser loses the same amount.
+
+This is a two-player zero-sum game: whatever you win, your opponent loses. You will play many hands. Your aim is to win as many chips as possible on average, not to win any single hand.
+
+Current state:
+- You are Player 0.
+- Your card: Jack
+- History: No actions yet.
+- You act first.
+
+Your legal actions: CHECK (free, pass to opponent) or BET (stake 1 chip)
+
+Your card is Jack. What probability do you assign to your opponent holding each of the other two cards? You cannot see their card.
+Work it out in three steps before you answer.
+1. Start from the deal alone: you hold the Jack, so your opponent holds one of the other two cards, and the deal makes them equally likely.
+2. Update on what your opponent has DONE so far. For each possibility, ask how likely a strong opponent in that situation would have been to act exactly as they did. Possibilities that make their actions natural become more likely; ones that make their actions strange become less likely. If they have not acted yet, keep step 1's numbers.
+3. Make the numbers add up to about 1.
+Assume your opponent plays an optimal, unexploitable strategy. Infer their hidden state from their observed actions under that assumption.
+Reply with only a JSON object with exactly these keys: "Queen", "King". Each value is a probability between 0 and 1, written as a decimal with 2 decimal places (never a fraction). The values should add up to about 1; we rescale them, so do not worry about rounding. Example of the FORMAT only, not a suggested answer (placeholder keys, made-up numbers): {"<other_card_A>": 0.7, "<other_card_B>": 0.3}

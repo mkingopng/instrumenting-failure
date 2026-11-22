@@ -1,0 +1,58 @@
+# run_experiment_recycle_v8_offpath: experiment 8, the off-path drive probe for one game, at memory level M0, sampled at temperature 0.2.
+# The lm is driven into a low-probability subgame by scripted opening actions, then plays on against cfr_ref.
+# scripts/collection_job.py renders this template once per game (kuhn, leduc, goofspiel, liarsdice, darkhex) inside one job, so a job holds five sweeps;
+# Dark Hex runs on its existing 2x2 board.
+# Experiment 8 differs from its experiment 7 counterpart in these resolved keys and no others: temperature (0.0 to 0.2),
+# action_top_logprobs (absent to the per-model value filled by scripts/collection_job.py, null when the model has none set) and, where noted,
+# exact_policy.enabled. Prompt set 7 is unchanged. Out root and pilot directory differ because they are placeholders.
+# One job is one seed of one model on one H200. Placeholders filled by scripts/collection_job.py:
+#   __MODEL_ID__ __REVISION__ __PORT__ __SEED__ __N_HANDS__ __N_SEEDS__ __OUT_ROOT__ __PILOT_DIR__ __ACTION_TOP_LOGPROBS__ __EXACT_POLICY_ENABLED__
+#   __GAME__ __DRIVE_OPENINGS__ __SEAT_MODE__
+# The exact-policy pass is on, collected with the run: one failed game in a five-game job does not block the other four.
+# Shared with experiment 7 on purpose: the reference caches (cfr_cache_dir, rl_cache_dir) and, where the kind uses them, the off-path sweep table and drive openings, configs/p6_sentinel and the anchor files.
+models:
+  - id: __MODEL_ID__
+    vllm_base_url: http://localhost:__PORT__/v1
+    enabled: true
+    pilot_dir: __PILOT_DIR__
+    served_weights_revision: __REVISION__
+
+games: [__GAME__]
+opponents: [cfr_ref]
+probe:
+  type: offpath_drive
+drive_openings: __DRIVE_OPENINGS__
+agent0: lm
+elicitation_mode: sibling
+max_retries: 3
+temperature: 0.2
+action_top_logprobs: __ACTION_TOP_LOGPROBS__
+n_hands: __N_HANDS__
+n_seeds: __N_SEEDS__
+seed: __SEED__
+seat_mode: __SEAT_MODE__
+memory_rung: __MEMORY_RUNG__
+memory_window_k: 5
+max_workers: 32
+request_timeout_s: 900
+belief_protocol: free
+runner: local-pool
+backend: katana-vllm
+serving:
+  provider: pbs-injob
+  serving_env:
+    vllm: "0.31.0"
+    torch: "2.13.0"
+    python: "3.13"
+exact_policy:
+  enabled: __EXACT_POLICY_ENABLED__
+out_root: __OUT_ROOT__
+cfr_iters: 1000
+rl_iterations: 1000
+cfr_cache_dir: data/cfr_policies
+rl_cache_dir: data/rl_policies
+require_cache_hit: true                # the sweep's parent process fails on a cold reference cache instead of solving
+wandb:
+  enabled: false
+  project: lmopt
+  mode: online

@@ -1,0 +1,11 @@
+{
+  "header": "\n\nYour match so far, against the same opponent in every {unit}:",
+  "summary": "\n- {n} {plays} played. Your total: {total}. Last {unit}: {last}.",
+  "transcript_line": "\n- {label} {idx} (your result {payoff}): {decisions}",
+  "notes_header": "- Your private notes on the opponent so far:",
+  "notes": "\n{notes_header}\n{scratchpad}",
+  "amount": "{amount:+g} {word}",
+  "decision": "{state} -> you chose {label}",
+  "decision_join": "; ",
+  "state_line_join": " / "
+}

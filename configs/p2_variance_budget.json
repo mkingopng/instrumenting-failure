@@ -1,0 +1,2525 @@
+{
+  "arms": [
+    "qwen2.5-14b-instruct",
+    "gemma-4-12b-it",
+    "mistral-nemo-instruct-2407",
+    "olmo-2-1124-13b-instruct"
+  ],
+  "candidate_windows": [
+    25,
+    50,
+    100,
+    125,
+    200,
+    250,
+    500,
+    1000
+  ],
+  "degenerate_cells_cross_check_unconfirmed": [
+    [
+      "leduc",
+      "always_bet"
+    ]
+  ],
+  "degenerate_rows": [
+    {
+      "arm": "qwen2.5-14b-instruct",
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "darkhex",
+      "n_effective_replicates": 1,
+      "n_nominal_replicates": 5,
+      "named_in_degenerate_cells": true,
+      "opponent": "always_bet",
+      "reason": "computed: n_effective_replicates == 1, every seed's LM-reward series is byte-identical (lmopt.scoring.replicate.effective_replicates) -- a degenerate cell, no ratio or interval reported IN THE BUDGET TABLE (this section); may still appear in the separate W-justification table above if it is one of the cells listed there (always_bet/kuhn), since that section reports the LM's own reward spread, not the opponent-stream identity this section names."
+    },
+    {
+      "arm": "qwen2.5-14b-instruct",
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "darkhex",
+      "n_effective_replicates": 1,
+      "n_nominal_replicates": 5,
+      "named_in_degenerate_cells": true,
+      "opponent": "bayesian",
+      "reason": "computed: n_effective_replicates == 1, every seed's LM-reward series is byte-identical (lmopt.scoring.replicate.effective_replicates) -- a degenerate cell, no ratio or interval reported IN THE BUDGET TABLE (this section); may still appear in the separate W-justification table above if it is one of the cells listed there (always_bet/kuhn), since that section reports the LM's own reward spread, not the opponent-stream identity this section names."
+    },
+    {
+      "arm": "qwen2.5-14b-instruct",
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "goofspiel",
+      "n_effective_replicates": 1,
+      "n_nominal_replicates": 5,
+      "named_in_degenerate_cells": true,
+      "opponent": "always_bet",
+      "reason": "computed: n_effective_replicates == 1, every seed's LM-reward series is byte-identical (lmopt.scoring.replicate.effective_replicates) -- a degenerate cell, no ratio or interval reported IN THE BUDGET TABLE (this section); may still appear in the separate W-justification table above if it is one of the cells listed there (always_bet/kuhn), since that section reports the LM's own reward spread, not the opponent-stream identity this section names."
+    },
+    {
+      "arm": "qwen2.5-14b-instruct",
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "goofspiel",
+      "n_effective_replicates": 1,
+      "n_nominal_replicates": 5,
+      "named_in_degenerate_cells": true,
+      "opponent": "bayesian",
+      "reason": "computed: n_effective_replicates == 1, every seed's LM-reward series is byte-identical (lmopt.scoring.replicate.effective_replicates) -- a degenerate cell, no ratio or interval reported IN THE BUDGET TABLE (this section); may still appear in the separate W-justification table above if it is one of the cells listed there (always_bet/kuhn), since that section reports the LM's own reward spread, not the opponent-stream identity this section names."
+    },
+    {
+      "arm": "gemma-4-12b-it",
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "darkhex",
+      "n_effective_replicates": 1,
+      "n_nominal_replicates": 5,
+      "named_in_degenerate_cells": true,
+      "opponent": "always_bet",
+      "reason": "computed: n_effective_replicates == 1, every seed's LM-reward series is byte-identical (lmopt.scoring.replicate.effective_replicates) -- a degenerate cell, no ratio or interval reported IN THE BUDGET TABLE (this section); may still appear in the separate W-justification table above if it is one of the cells listed there (always_bet/kuhn), since that section reports the LM's own reward spread, not the opponent-stream identity this section names."
+    },
+    {
+      "arm": "gemma-4-12b-it",
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "darkhex",
+      "n_effective_replicates": 1,
+      "n_nominal_replicates": 5,
+      "named_in_degenerate_cells": true,
+      "opponent": "bayesian",
+      "reason": "computed: n_effective_replicates == 1, every seed's LM-reward series is byte-identical (lmopt.scoring.replicate.effective_replicates) -- a degenerate cell, no ratio or interval reported IN THE BUDGET TABLE (this section); may still appear in the separate W-justification table above if it is one of the cells listed there (always_bet/kuhn), since that section reports the LM's own reward spread, not the opponent-stream identity this section names."
+    },
+    {
+      "arm": "mistral-nemo-instruct-2407",
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "darkhex",
+      "n_effective_replicates": 1,
+      "n_nominal_replicates": 5,
+      "named_in_degenerate_cells": true,
+      "opponent": "always_bet",
+      "reason": "computed: n_effective_replicates == 1, every seed's LM-reward series is byte-identical (lmopt.scoring.replicate.effective_replicates) -- a degenerate cell, no ratio or interval reported IN THE BUDGET TABLE (this section); may still appear in the separate W-justification table above if it is one of the cells listed there (always_bet/kuhn), since that section reports the LM's own reward spread, not the opponent-stream identity this section names."
+    },
+    {
+      "arm": "mistral-nemo-instruct-2407",
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "darkhex",
+      "n_effective_replicates": 1,
+      "n_nominal_replicates": 5,
+      "named_in_degenerate_cells": true,
+      "opponent": "bayesian",
+      "reason": "computed: n_effective_replicates == 1, every seed's LM-reward series is byte-identical (lmopt.scoring.replicate.effective_replicates) -- a degenerate cell, no ratio or interval reported IN THE BUDGET TABLE (this section); may still appear in the separate W-justification table above if it is one of the cells listed there (always_bet/kuhn), since that section reports the LM's own reward spread, not the opponent-stream identity this section names."
+    },
+    {
+      "arm": "mistral-nemo-instruct-2407",
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "goofspiel",
+      "n_effective_replicates": 1,
+      "n_nominal_replicates": 5,
+      "named_in_degenerate_cells": true,
+      "opponent": "always_bet",
+      "reason": "computed: n_effective_replicates == 1, every seed's LM-reward series is byte-identical (lmopt.scoring.replicate.effective_replicates) -- a degenerate cell, no ratio or interval reported IN THE BUDGET TABLE (this section); may still appear in the separate W-justification table above if it is one of the cells listed there (always_bet/kuhn), since that section reports the LM's own reward spread, not the opponent-stream identity this section names."
+    },
+    {
+      "arm": "mistral-nemo-instruct-2407",
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "goofspiel",
+      "n_effective_replicates": 1,
+      "n_nominal_replicates": 5,
+      "named_in_degenerate_cells": true,
+      "opponent": "bayesian",
+      "reason": "computed: n_effective_replicates == 1, every seed's LM-reward series is byte-identical (lmopt.scoring.replicate.effective_replicates) -- a degenerate cell, no ratio or interval reported IN THE BUDGET TABLE (this section); may still appear in the separate W-justification table above if it is one of the cells listed there (always_bet/kuhn), since that section reports the LM's own reward spread, not the opponent-stream identity this section names."
+    },
+    {
+      "arm": "mistral-nemo-instruct-2407",
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "kuhn",
+      "n_effective_replicates": 1,
+      "n_nominal_replicates": 5,
+      "named_in_degenerate_cells": true,
+      "opponent": "always_bet",
+      "reason": "computed: n_effective_replicates == 1, every seed's LM-reward series is byte-identical (lmopt.scoring.replicate.effective_replicates) -- a degenerate cell, no ratio or interval reported IN THE BUDGET TABLE (this section); may still appear in the separate W-justification table above if it is one of the cells listed there (always_bet/kuhn), since that section reports the LM's own reward spread, not the opponent-stream identity this section names."
+    },
+    {
+      "arm": "mistral-nemo-instruct-2407",
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "leduc",
+      "n_effective_replicates": 1,
+      "n_nominal_replicates": 5,
+      "named_in_degenerate_cells": false,
+      "opponent": "bayesian",
+      "reason": "computed: n_effective_replicates == 1, every seed's LM-reward series is byte-identical (lmopt.scoring.replicate.effective_replicates) -- a degenerate cell, no ratio or interval reported IN THE BUDGET TABLE (this section); may still appear in the separate W-justification table above if it is one of the cells listed there (always_bet/kuhn), since that section reports the LM's own reward spread, not the opponent-stream identity this section names."
+    },
+    {
+      "arm": "olmo-2-1124-13b-instruct",
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "goofspiel",
+      "n_effective_replicates": 1,
+      "n_nominal_replicates": 5,
+      "named_in_degenerate_cells": true,
+      "opponent": "always_bet",
+      "reason": "computed: n_effective_replicates == 1, every seed's LM-reward series is byte-identical (lmopt.scoring.replicate.effective_replicates) -- a degenerate cell, no ratio or interval reported IN THE BUDGET TABLE (this section); may still appear in the separate W-justification table above if it is one of the cells listed there (always_bet/kuhn), since that section reports the LM's own reward spread, not the opponent-stream identity this section names."
+    },
+    {
+      "arm": "olmo-2-1124-13b-instruct",
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "goofspiel",
+      "n_effective_replicates": 1,
+      "n_nominal_replicates": 5,
+      "named_in_degenerate_cells": true,
+      "opponent": "bayesian",
+      "reason": "computed: n_effective_replicates == 1, every seed's LM-reward series is byte-identical (lmopt.scoring.replicate.effective_replicates) -- a degenerate cell, no ratio or interval reported IN THE BUDGET TABLE (this section); may still appear in the separate W-justification table above if it is one of the cells listed there (always_bet/kuhn), since that section reports the LM's own reward spread, not the opponent-stream identity this section names."
+    },
+    {
+      "arm": "olmo-2-1124-13b-instruct",
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "kuhn",
+      "n_effective_replicates": 1,
+      "n_nominal_replicates": 5,
+      "named_in_degenerate_cells": true,
+      "opponent": "always_bet",
+      "reason": "computed: n_effective_replicates == 1, every seed's LM-reward series is byte-identical (lmopt.scoring.replicate.effective_replicates) -- a degenerate cell, no ratio or interval reported IN THE BUDGET TABLE (this section); may still appear in the separate W-justification table above if it is one of the cells listed there (always_bet/kuhn), since that section reports the LM's own reward spread, not the opponent-stream identity this section names."
+    },
+    {
+      "arm": "olmo-2-1124-13b-instruct",
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "leduc",
+      "n_effective_replicates": 1,
+      "n_nominal_replicates": 5,
+      "named_in_degenerate_cells": false,
+      "opponent": "bayesian",
+      "reason": "computed: n_effective_replicates == 1, every seed's LM-reward series is byte-identical (lmopt.scoring.replicate.effective_replicates) -- a degenerate cell, no ratio or interval reported IN THE BUDGET TABLE (this section); may still appear in the separate W-justification table above if it is one of the cells listed there (always_bet/kuhn), since that section reports the LM's own reward spread, not the opponent-stream identity this section names."
+    }
+  ],
+  "generated": "2026-08-15",
+  "k": 1.0,
+  "missing_arms": [],
+  "rows": [
+    {
+      "arm": "qwen2.5-14b-instruct",
+      "between_policy_seed_ci": {
+        "hi": 0.36384164414361264,
+        "lo": 0.3113583558563874,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": 0.3376,
+        "point_pooled": 0.3376,
+        "se": 0.009453041838477174
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "darkhex",
+      "opponent": "cfr_ref",
+      "within_policy_hand_ci": {
+        "hi": 0.36283000000000004,
+        "lo": 0.31156,
+        "n": 200,
+        "point": 0.3376,
+        "se": 0.014234361567918356
+      }
+    },
+    {
+      "arm": "qwen2.5-14b-instruct",
+      "between_policy_seed_ci": {
+        "hi": 0.8967094727245477,
+        "lo": 0.8800905272754524,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": 0.8884000000000001,
+        "point_pooled": 0.8884,
+        "se": 0.0029933259094191557
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "darkhex",
+      "opponent": "rl",
+      "within_policy_hand_ci": {
+        "hi": 0.9028,
+        "lo": 0.87278,
+        "n": 200,
+        "point": 0.8884,
+        "se": 0.007064542647197363
+      }
+    },
+    {
+      "arm": "qwen2.5-14b-instruct",
+      "between_policy_seed_ci": {
+        "hi": -0.7299379812239226,
+        "lo": -0.7638620187760774,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.7469,
+        "point_pooled": -0.7469,
+        "se": 0.006110237311267055
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "goofspiel",
+      "opponent": "cfr_ref",
+      "within_policy_hand_ci": {
+        "hi": -0.7412974999999999,
+        "lo": -0.753215,
+        "n": 200,
+        "point": -0.7469,
+        "se": 0.0031657113563873427
+      }
+    },
+    {
+      "arm": "qwen2.5-14b-instruct",
+      "between_policy_seed_ci": {
+        "hi": -0.4615324855033298,
+        "lo": -0.4818675144966703,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.47170000000000006,
+        "point_pooled": -0.4717,
+        "se": 0.0036626493143624775
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "goofspiel",
+      "opponent": "rl",
+      "within_policy_hand_ci": {
+        "hi": -0.4651825,
+        "lo": -0.47760250000000004,
+        "n": 200,
+        "point": -0.4717,
+        "se": 0.0030233362050961555
+      }
+    },
+    {
+      "arm": "qwen2.5-14b-instruct",
+      "between_policy_seed_ci": {
+        "hi": 0.4543501645643216,
+        "lo": 0.2736498354356784,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": 0.364,
+        "point_pooled": 0.364,
+        "se": 0.03254688925227724
+      },
+      "cell_is_in_degenerate_cells": true,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "kuhn",
+      "opponent": "always_bet",
+      "within_policy_hand_ci": {
+        "hi": 0.40773500000000007,
+        "lo": 0.32577,
+        "n": 200,
+        "point": 0.364,
+        "se": 0.022176717022351328
+      }
+    },
+    {
+      "arm": "qwen2.5-14b-instruct",
+      "between_policy_seed_ci": {
+        "hi": -0.08191076249427529,
+        "lo": -0.20568923750572468,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.14379999999999998,
+        "point_pooled": -0.1438,
+        "se": 0.022294393914165957
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "kuhn",
+      "opponent": "bayesian",
+      "within_policy_hand_ci": {
+        "hi": -0.11310999999999997,
+        "lo": -0.17102,
+        "n": 200,
+        "point": -0.1438,
+        "se": 0.01576026375311781
+      }
+    },
+    {
+      "arm": "qwen2.5-14b-instruct",
+      "between_policy_seed_ci": {
+        "hi": -0.025199670658424655,
+        "lo": -0.15440032934157535,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.0898,
+        "point_pooled": -0.0898,
+        "se": 0.023271012010653944
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "kuhn",
+      "opponent": "cfr_ref",
+      "within_policy_hand_ci": {
+        "hi": -0.05706499999999997,
+        "lo": -0.12002499999999999,
+        "n": 200,
+        "point": -0.0898,
+        "se": 0.01674354524996688
+      }
+    },
+    {
+      "arm": "qwen2.5-14b-instruct",
+      "between_policy_seed_ci": {
+        "hi": -0.028459183902286772,
+        "lo": -0.1395408160977132,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.08399999999999999,
+        "point_pooled": -0.084,
+        "se": 0.0200074985942771
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "kuhn",
+      "opponent": "rl",
+      "within_policy_hand_ci": {
+        "hi": -0.05135499999999999,
+        "lo": -0.113,
+        "n": 200,
+        "point": -0.084,
+        "se": 0.01682218814751374
+      }
+    },
+    {
+      "arm": "qwen2.5-14b-instruct",
+      "between_policy_seed_ci": {
+        "hi": 1.0096714363888957,
+        "lo": 0.6675285636111041,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": 0.8385999999999999,
+        "point_pooled": 0.8386,
+        "se": 0.061625157200610875
+      },
+      "cell_is_in_degenerate_cells": true,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "leduc",
+      "opponent": "always_bet",
+      "within_policy_hand_ci": {
+        "hi": 0.966535,
+        "lo": 0.714445,
+        "n": 200,
+        "point": 0.8386,
+        "se": 0.06556711147010111
+      }
+    },
+    {
+      "arm": "qwen2.5-14b-instruct",
+      "between_policy_seed_ci": {
+        "hi": -0.5300566528855273,
+        "lo": -1.1055433471144729,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.8178000000000001,
+        "point_pooled": -0.8178,
+        "se": 0.10365394348504066
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "leduc",
+      "opponent": "bayesian",
+      "within_policy_hand_ci": {
+        "hi": -0.647665,
+        "lo": -1.01769,
+        "n": 200,
+        "point": -0.8178,
+        "se": 0.09447312556100984
+      }
+    },
+    {
+      "arm": "qwen2.5-14b-instruct",
+      "between_policy_seed_ci": {
+        "hi": -0.6902117767739533,
+        "lo": -0.9553882232260467,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.8228,
+        "point_pooled": -0.8228,
+        "se": 0.04776232825145776
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "leduc",
+      "opponent": "cfr_ref",
+      "within_policy_hand_ci": {
+        "hi": -0.69738,
+        "lo": -0.9408299999999999,
+        "n": 200,
+        "point": -0.8228,
+        "se": 0.06451662693254948
+      }
+    },
+    {
+      "arm": "qwen2.5-14b-instruct",
+      "between_policy_seed_ci": {
+        "hi": -0.7383507514591516,
+        "lo": -1.0180492485408483,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.8782,
+        "point_pooled": -0.8782,
+        "se": 0.050377971376386305
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "leduc",
+      "opponent": "rl",
+      "within_policy_hand_ci": {
+        "hi": -0.7470999999999999,
+        "lo": -1.019925,
+        "n": 200,
+        "point": -0.8782,
+        "se": 0.07333448499476379
+      }
+    },
+    {
+      "arm": "qwen2.5-14b-instruct",
+      "between_policy_seed_ci": {
+        "hi": 0.4481154165281254,
+        "lo": 0.3630845834718746,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": 0.4056,
+        "point_pooled": 0.4056,
+        "se": 0.01531535177526132
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "liarsdice",
+      "opponent": "always_bet",
+      "within_policy_hand_ci": {
+        "hi": 0.42921000000000004,
+        "lo": 0.37958,
+        "n": 200,
+        "point": 0.4056,
+        "se": 0.012916957962890307
+      }
+    },
+    {
+      "arm": "qwen2.5-14b-instruct",
+      "between_policy_seed_ci": {
+        "hi": 0.1471874327152999,
+        "lo": 0.09601256728470009,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": 0.1216,
+        "point_pooled": 0.1216,
+        "se": 0.00921737489744233
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "liarsdice",
+      "opponent": "bayesian",
+      "within_policy_hand_ci": {
+        "hi": 0.15001,
+        "lo": 0.09751000000000003,
+        "n": 200,
+        "point": 0.1216,
+        "se": 0.013340978695838402
+      }
+    },
+    {
+      "arm": "qwen2.5-14b-instruct",
+      "between_policy_seed_ci": {
+        "hi": 0.013934204528422305,
+        "lo": -0.0899342045284223,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.038,
+        "point_pooled": -0.038,
+        "se": 0.01870828693386971
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "liarsdice",
+      "opponent": "cfr_ref",
+      "within_policy_hand_ci": {
+        "hi": -0.011139999999999987,
+        "lo": -0.06447999999999998,
+        "n": 200,
+        "point": -0.038,
+        "se": 0.014543873116406463
+      }
+    },
+    {
+      "arm": "qwen2.5-14b-instruct",
+      "between_policy_seed_ci": {
+        "hi": 0.009119594135712193,
+        "lo": -0.0651195941357122,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.028000000000000004,
+        "point_pooled": -0.028,
+        "se": 0.013371611720357422
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "liarsdice",
+      "opponent": "rl",
+      "within_policy_hand_ci": {
+        "hi": -0.003979999999999996,
+        "lo": -0.054,
+        "n": 200,
+        "point": -0.028,
+        "se": 0.012975827391053414
+      }
+    },
+    {
+      "arm": "gemma-4-12b-it",
+      "between_policy_seed_ci": {
+        "hi": 0.36653340256134437,
+        "lo": 0.28546659743865566,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": 0.326,
+        "point_pooled": 0.326,
+        "se": 0.014601369798755181
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "darkhex",
+      "opponent": "cfr_ref",
+      "within_policy_hand_ci": {
+        "hi": 0.34961000000000003,
+        "lo": 0.29716000000000004,
+        "n": 200,
+        "point": 0.326,
+        "se": 0.01385397368752638
+      }
+    },
+    {
+      "arm": "gemma-4-12b-it",
+      "between_policy_seed_ci": {
+        "hi": 0.8935279138455278,
+        "lo": 0.8816720861544721,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": 0.8876,
+        "point_pooled": 0.8876,
+        "se": 0.0021354156504062643
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "darkhex",
+      "opponent": "rl",
+      "within_policy_hand_ci": {
+        "hi": 0.9,
+        "lo": 0.87478,
+        "n": 200,
+        "point": 0.8876,
+        "se": 0.006272677932287854
+      }
+    },
+    {
+      "arm": "gemma-4-12b-it",
+      "between_policy_seed_ci": {
+        "hi": 0.4543501645643216,
+        "lo": 0.2736498354356784,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": 0.364,
+        "point_pooled": 0.364,
+        "se": 0.03254688925227724
+      },
+      "cell_is_in_degenerate_cells": true,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "kuhn",
+      "opponent": "always_bet",
+      "within_policy_hand_ci": {
+        "hi": 0.40773500000000007,
+        "lo": 0.32577,
+        "n": 200,
+        "point": 0.364,
+        "se": 0.022176717022351328
+      }
+    },
+    {
+      "arm": "gemma-4-12b-it",
+      "between_policy_seed_ci": {
+        "hi": -0.08191076249427529,
+        "lo": -0.20568923750572468,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.14379999999999998,
+        "point_pooled": -0.1438,
+        "se": 0.022294393914165957
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "kuhn",
+      "opponent": "bayesian",
+      "within_policy_hand_ci": {
+        "hi": -0.11310999999999997,
+        "lo": -0.17102,
+        "n": 200,
+        "point": -0.1438,
+        "se": 0.01576026375311781
+      }
+    },
+    {
+      "arm": "gemma-4-12b-it",
+      "between_policy_seed_ci": {
+        "hi": -0.025199670658424655,
+        "lo": -0.15440032934157535,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.0898,
+        "point_pooled": -0.0898,
+        "se": 0.023271012010653944
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "kuhn",
+      "opponent": "cfr_ref",
+      "within_policy_hand_ci": {
+        "hi": -0.05706499999999997,
+        "lo": -0.12002499999999999,
+        "n": 200,
+        "point": -0.0898,
+        "se": 0.01674354524996688
+      }
+    },
+    {
+      "arm": "gemma-4-12b-it",
+      "between_policy_seed_ci": {
+        "hi": -0.028459183902286772,
+        "lo": -0.1395408160977132,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.08399999999999999,
+        "point_pooled": -0.084,
+        "se": 0.0200074985942771
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "kuhn",
+      "opponent": "rl",
+      "within_policy_hand_ci": {
+        "hi": -0.05135499999999999,
+        "lo": -0.113,
+        "n": 200,
+        "point": -0.084,
+        "se": 0.01682218814751374
+      }
+    },
+    {
+      "arm": "gemma-4-12b-it",
+      "between_policy_seed_ci": {
+        "hi": 1.3176987489619596,
+        "lo": 0.9243012510380405,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": 1.121,
+        "point_pooled": 1.121,
+        "se": 0.0708568980410517
+      },
+      "cell_is_in_degenerate_cells": true,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "leduc",
+      "opponent": "always_bet",
+      "within_policy_hand_ci": {
+        "hi": 1.25186,
+        "lo": 0.9844,
+        "n": 200,
+        "point": 1.121,
+        "se": 0.06927342521635574
+      }
+    },
+    {
+      "arm": "gemma-4-12b-it",
+      "between_policy_seed_ci": {
+        "hi": 0.3360309218022557,
+        "lo": -0.1260309218022557,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": 0.10500000000000001,
+        "point_pooled": 0.105,
+        "se": 0.08322439546190769
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "leduc",
+      "opponent": "bayesian",
+      "within_policy_hand_ci": {
+        "hi": 0.24803,
+        "lo": -0.059144999999999975,
+        "n": 200,
+        "point": 0.105,
+        "se": 0.08150996856136292
+      }
+    },
+    {
+      "arm": "gemma-4-12b-it",
+      "between_policy_seed_ci": {
+        "hi": -0.19683062842740004,
+        "lo": -0.5011693715726,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.34900000000000003,
+        "point_pooled": -0.349,
+        "se": 0.05481605604200288
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "leduc",
+      "opponent": "cfr_ref",
+      "within_policy_hand_ci": {
+        "hi": -0.24194999999999997,
+        "lo": -0.470895,
+        "n": 200,
+        "point": -0.349,
+        "se": 0.05947044127908963
+      }
+    },
+    {
+      "arm": "gemma-4-12b-it",
+      "between_policy_seed_ci": {
+        "hi": -0.177676738160824,
+        "lo": -0.49952326183917606,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.3386,
+        "point_pooled": -0.3386,
+        "se": 0.057969474725927964
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "leduc",
+      "opponent": "rl",
+      "within_policy_hand_ci": {
+        "hi": -0.22001999999999994,
+        "lo": -0.45857499999999995,
+        "n": 200,
+        "point": -0.3386,
+        "se": 0.06599265593371682
+      }
+    },
+    {
+      "arm": "gemma-4-12b-it",
+      "between_policy_seed_ci": {
+        "hi": -0.0022174861328860193,
+        "lo": -0.11058251386711399,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.056400000000000006,
+        "point_pooled": -0.0564,
+        "se": 0.019518196638009362
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "liarsdice",
+      "opponent": "always_bet",
+      "within_policy_hand_ci": {
+        "hi": -0.021179999999999994,
+        "lo": -0.08843,
+        "n": 200,
+        "point": -0.0564,
+        "se": 0.015986636504708187
+      }
+    },
+    {
+      "arm": "gemma-4-12b-it",
+      "between_policy_seed_ci": {
+        "hi": -0.493957653049095,
+        "lo": -0.5556423469509051,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.5248,
+        "point_pooled": -0.5248,
+        "se": 0.011110355529864929
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "liarsdice",
+      "opponent": "bayesian",
+      "within_policy_hand_ci": {
+        "hi": -0.50354,
+        "lo": -0.5440200000000001,
+        "n": 200,
+        "point": -0.5248,
+        "se": 0.011660229015912061
+      }
+    },
+    {
+      "arm": "gemma-4-12b-it",
+      "between_policy_seed_ci": {
+        "hi": -0.27183207893235695,
+        "lo": -0.335367921067643,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.3036,
+        "point_pooled": -0.3036,
+        "se": 0.011443775600735975
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "liarsdice",
+      "opponent": "cfr_ref",
+      "within_policy_hand_ci": {
+        "hi": -0.2756,
+        "lo": -0.32642000000000004,
+        "n": 200,
+        "point": -0.3036,
+        "se": 0.012931164645749331
+      }
+    },
+    {
+      "arm": "gemma-4-12b-it",
+      "between_policy_seed_ci": {
+        "hi": -0.16183715840896598,
+        "lo": -0.262962841591034,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.2124,
+        "point_pooled": -0.2124,
+        "se": 0.018214280112043957
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "liarsdice",
+      "opponent": "rl",
+      "within_policy_hand_ci": {
+        "hi": -0.1868,
+        "lo": -0.24,
+        "n": 200,
+        "point": -0.2124,
+        "se": 0.014020926786047293
+      }
+    },
+    {
+      "arm": "mistral-nemo-instruct-2407",
+      "between_policy_seed_ci": {
+        "hi": -0.3056318741595482,
+        "lo": -0.38956812584045186,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.3476,
+        "point_pooled": -0.3476,
+        "se": 0.015118200951171406
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "darkhex",
+      "opponent": "cfr_ref",
+      "within_policy_hand_ci": {
+        "hi": -0.31438,
+        "lo": -0.36842,
+        "n": 200,
+        "point": -0.3476,
+        "se": 0.013578960373464554
+      }
+    },
+    {
+      "arm": "mistral-nemo-instruct-2407",
+      "between_policy_seed_ci": {
+        "hi": 0.8935279138455278,
+        "lo": 0.8816720861544721,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": 0.8876,
+        "point_pooled": 0.8876,
+        "se": 0.0021354156504062643
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "darkhex",
+      "opponent": "rl",
+      "within_policy_hand_ci": {
+        "hi": 0.9,
+        "lo": 0.87478,
+        "n": 200,
+        "point": 0.8876,
+        "se": 0.006272677932287854
+      }
+    },
+    {
+      "arm": "mistral-nemo-instruct-2407",
+      "between_policy_seed_ci": {
+        "hi": -0.7299379812239226,
+        "lo": -0.7638620187760774,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.7469,
+        "point_pooled": -0.7469,
+        "se": 0.006110237311267055
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "goofspiel",
+      "opponent": "cfr_ref",
+      "within_policy_hand_ci": {
+        "hi": -0.7412974999999999,
+        "lo": -0.753215,
+        "n": 200,
+        "point": -0.7469,
+        "se": 0.0031657113563873427
+      }
+    },
+    {
+      "arm": "mistral-nemo-instruct-2407",
+      "between_policy_seed_ci": {
+        "hi": -0.4615324855033298,
+        "lo": -0.4818675144966703,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.47170000000000006,
+        "point_pooled": -0.4717,
+        "se": 0.0036626493143624775
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "goofspiel",
+      "opponent": "rl",
+      "within_policy_hand_ci": {
+        "hi": -0.4651825,
+        "lo": -0.47760250000000004,
+        "n": 200,
+        "point": -0.4717,
+        "se": 0.0030233362050961555
+      }
+    },
+    {
+      "arm": "mistral-nemo-instruct-2407",
+      "between_policy_seed_ci": {
+        "hi": 0.07317506984937144,
+        "lo": -0.04197506984937144,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": 0.0156,
+        "point_pooled": 0.0156,
+        "se": 0.02074029893709346
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "kuhn",
+      "opponent": "bayesian",
+      "within_policy_hand_ci": {
+        "hi": 0.04361,
+        "lo": -0.008419999999999997,
+        "n": 200,
+        "point": 0.0156,
+        "se": 0.013218086588660503
+      }
+    },
+    {
+      "arm": "mistral-nemo-instruct-2407",
+      "between_policy_seed_ci": {
+        "hi": -0.1787953896153875,
+        "lo": -0.27080461038461257,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.22480000000000003,
+        "point_pooled": -0.2248,
+        "se": 0.01657226598869328
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "kuhn",
+      "opponent": "cfr_ref",
+      "within_policy_hand_ci": {
+        "hi": -0.2,
+        "lo": -0.25086,
+        "n": 200,
+        "point": -0.2248,
+        "se": 0.013655105621991312
+      }
+    },
+    {
+      "arm": "mistral-nemo-instruct-2407",
+      "between_policy_seed_ci": {
+        "hi": -0.16085143969775575,
+        "lo": -0.24874856030224426,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.2048,
+        "point_pooled": -0.2048,
+        "se": 0.01583161394173064
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "kuhn",
+      "opponent": "rl",
+      "within_policy_hand_ci": {
+        "hi": -0.17717,
+        "lo": -0.2256,
+        "n": 200,
+        "point": -0.2048,
+        "se": 0.012923952442409726
+      }
+    },
+    {
+      "arm": "mistral-nemo-instruct-2407",
+      "between_policy_seed_ci": {
+        "hi": 0.04752818939936582,
+        "lo": -0.019128189399365822,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": 0.014199999999999999,
+        "point_pooled": 0.0142,
+        "se": 0.012005831916198062
+      },
+      "cell_is_in_degenerate_cells": true,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "leduc",
+      "opponent": "always_bet",
+      "within_policy_hand_ci": {
+        "hi": 0.038415,
+        "lo": -0.011824999999999995,
+        "n": 200,
+        "point": 0.0142,
+        "se": 0.012496815111847439
+      }
+    },
+    {
+      "arm": "mistral-nemo-instruct-2407",
+      "between_policy_seed_ci": {
+        "hi": -0.6194169915321835,
+        "lo": -0.6725830084678165,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.646,
+        "point_pooled": -0.646,
+        "se": 0.009576011695899299
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "leduc",
+      "opponent": "cfr_ref",
+      "within_policy_hand_ci": {
+        "hi": -0.6286,
+        "lo": -0.663215,
+        "n": 200,
+        "point": -0.646,
+        "se": 0.009814874159859075
+      }
+    },
+    {
+      "arm": "mistral-nemo-instruct-2407",
+      "between_policy_seed_ci": {
+        "hi": -0.5377442599366666,
+        "lo": -0.5922557400633335,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.5650000000000001,
+        "point_pooled": -0.565,
+        "se": 0.00981835016690685
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "leduc",
+      "opponent": "rl",
+      "within_policy_hand_ci": {
+        "hi": -0.54637,
+        "lo": -0.58341,
+        "n": 200,
+        "point": -0.565,
+        "se": 0.010841636426389243
+      }
+    },
+    {
+      "arm": "mistral-nemo-instruct-2407",
+      "between_policy_seed_ci": {
+        "hi": 0.4245264164754823,
+        "lo": 0.35227358352451765,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": 0.38839999999999997,
+        "point_pooled": 0.3884,
+        "se": 0.01301383878799795
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "liarsdice",
+      "opponent": "always_bet",
+      "within_policy_hand_ci": {
+        "hi": 0.41127,
+        "lo": 0.3684,
+        "n": 200,
+        "point": 0.3884,
+        "se": 0.012078935691408655
+      }
+    },
+    {
+      "arm": "mistral-nemo-instruct-2407",
+      "between_policy_seed_ci": {
+        "hi": 0.11372695078011708,
+        "lo": 0.01587304921988291,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": 0.0648,
+        "point_pooled": 0.0648,
+        "se": 0.01762498226949463
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "liarsdice",
+      "opponent": "bayesian",
+      "within_policy_hand_ci": {
+        "hi": 0.08885000000000001,
+        "lo": 0.04238,
+        "n": 200,
+        "point": 0.0648,
+        "se": 0.01274081779914283
+      }
+    },
+    {
+      "arm": "mistral-nemo-instruct-2407",
+      "between_policy_seed_ci": {
+        "hi": 0.03226830815243703,
+        "lo": -0.10586830815243703,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.0368,
+        "point_pooled": -0.0368,
+        "se": 0.024880514464134376
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "liarsdice",
+      "opponent": "cfr_ref",
+      "within_policy_hand_ci": {
+        "hi": -0.009549999999999987,
+        "lo": -0.062049999999999994,
+        "n": 200,
+        "point": -0.0368,
+        "se": 0.014409225269400213
+      }
+    },
+    {
+      "arm": "mistral-nemo-instruct-2407",
+      "between_policy_seed_ci": {
+        "hi": 0.043354141728428705,
+        "lo": -0.0641541417284287,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.010399999999999998,
+        "point_pooled": -0.0104,
+        "se": 0.019363883907935413
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "liarsdice",
+      "opponent": "rl",
+      "within_policy_hand_ci": {
+        "hi": 0.01844000000000001,
+        "lo": -0.0388,
+        "n": 200,
+        "point": -0.0104,
+        "se": 0.014796689973465494
+      }
+    },
+    {
+      "arm": "olmo-2-1124-13b-instruct",
+      "between_policy_seed_ci": {
+        "hi": -0.10061362970603777,
+        "lo": -0.6121863702939623,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.3564,
+        "point_pooled": -0.3564,
+        "se": 0.09214206422693165
+      },
+      "cell_is_in_degenerate_cells": true,
+      "effective_replicates": {
+        "duplicate_groups": [
+          [
+            3,
+            4
+          ]
+        ],
+        "n_effective": 4,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "darkhex",
+      "opponent": "always_bet",
+      "within_policy_hand_ci": {
+        "hi": -0.32959,
+        "lo": -0.38322,
+        "n": 200,
+        "point": -0.3564,
+        "se": 0.013687380535721518
+      }
+    },
+    {
+      "arm": "olmo-2-1124-13b-instruct",
+      "between_policy_seed_ci": {
+        "hi": -0.22078089706194143,
+        "lo": -0.6464191029380586,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.43360000000000004,
+        "point_pooled": -0.4336,
+        "se": 0.07666394198056867
+      },
+      "cell_is_in_degenerate_cells": true,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "darkhex",
+      "opponent": "bayesian",
+      "within_policy_hand_ci": {
+        "hi": -0.40598,
+        "lo": -0.45764,
+        "n": 200,
+        "point": -0.4336,
+        "se": 0.014004865773245851
+      }
+    },
+    {
+      "arm": "olmo-2-1124-13b-instruct",
+      "between_policy_seed_ci": {
+        "hi": -0.7644638012586102,
+        "lo": -0.8387361987413897,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.8016,
+        "point_pooled": -0.8016,
+        "se": 0.013377593206552504
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "darkhex",
+      "opponent": "cfr_ref",
+      "within_policy_hand_ci": {
+        "hi": -0.78553,
+        "lo": -0.8144,
+        "n": 200,
+        "point": -0.8016,
+        "se": 0.00815551334925949
+      }
+    },
+    {
+      "arm": "olmo-2-1124-13b-instruct",
+      "between_policy_seed_ci": {
+        "hi": -0.9984896000000001,
+        "lo": -1.0007104,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.9996,
+        "point_pooled": -0.9996,
+        "se": 0.00040000000000000034
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [
+          [
+            0,
+            1,
+            2,
+            4
+          ]
+        ],
+        "n_effective": 2,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "darkhex",
+      "opponent": "rl",
+      "within_policy_hand_ci": {
+        "hi": -0.9988,
+        "lo": -1.0,
+        "n": 200,
+        "point": -0.9996,
+        "se": 0.00039971849390772697
+      }
+    },
+    {
+      "arm": "olmo-2-1124-13b-instruct",
+      "between_policy_seed_ci": {
+        "hi": -0.9980832337549611,
+        "lo": -1.1023167662450386,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -1.0501999999999998,
+        "point_pooled": -1.0502,
+        "se": 0.01877405124100818
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "goofspiel",
+      "opponent": "cfr_ref",
+      "within_policy_hand_ci": {
+        "hi": -1.0109024999999998,
+        "lo": -1.0834249999999999,
+        "n": 200,
+        "point": -1.0502,
+        "se": 0.01867676302616913
+      }
+    },
+    {
+      "arm": "olmo-2-1124-13b-instruct",
+      "between_policy_seed_ci": {
+        "hi": -0.809703208288471,
+        "lo": -0.8952967917115291,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.8525,
+        "point_pooled": -0.8525,
+        "se": 0.015416711711645908
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "goofspiel",
+      "opponent": "rl",
+      "within_policy_hand_ci": {
+        "hi": -0.82083,
+        "lo": -0.8922525,
+        "n": 200,
+        "point": -0.8525,
+        "se": 0.01800365260957987
+      }
+    },
+    {
+      "arm": "olmo-2-1124-13b-instruct",
+      "between_policy_seed_ci": {
+        "hi": 0.07317506984937144,
+        "lo": -0.04197506984937144,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": 0.0156,
+        "point_pooled": 0.0156,
+        "se": 0.02074029893709346
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "kuhn",
+      "opponent": "bayesian",
+      "within_policy_hand_ci": {
+        "hi": 0.04361,
+        "lo": -0.008419999999999997,
+        "n": 200,
+        "point": 0.0156,
+        "se": 0.013218086588660503
+      }
+    },
+    {
+      "arm": "olmo-2-1124-13b-instruct",
+      "between_policy_seed_ci": {
+        "hi": -0.1787953896153875,
+        "lo": -0.27080461038461257,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.22480000000000003,
+        "point_pooled": -0.2248,
+        "se": 0.01657226598869328
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "kuhn",
+      "opponent": "cfr_ref",
+      "within_policy_hand_ci": {
+        "hi": -0.2,
+        "lo": -0.25086,
+        "n": 200,
+        "point": -0.2248,
+        "se": 0.013655105621991312
+      }
+    },
+    {
+      "arm": "olmo-2-1124-13b-instruct",
+      "between_policy_seed_ci": {
+        "hi": -0.16085143969775575,
+        "lo": -0.24874856030224426,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.2048,
+        "point_pooled": -0.2048,
+        "se": 0.01583161394173064
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "kuhn",
+      "opponent": "rl",
+      "within_policy_hand_ci": {
+        "hi": -0.17717,
+        "lo": -0.2256,
+        "n": 200,
+        "point": -0.2048,
+        "se": 0.012923952442409726
+      }
+    },
+    {
+      "arm": "olmo-2-1124-13b-instruct",
+      "between_policy_seed_ci": {
+        "hi": 0.04752818939936582,
+        "lo": -0.019128189399365822,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": 0.014199999999999999,
+        "point_pooled": 0.0142,
+        "se": 0.012005831916198062
+      },
+      "cell_is_in_degenerate_cells": true,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "leduc",
+      "opponent": "always_bet",
+      "within_policy_hand_ci": {
+        "hi": 0.038415,
+        "lo": -0.011824999999999995,
+        "n": 200,
+        "point": 0.0142,
+        "se": 0.012496815111847439
+      }
+    },
+    {
+      "arm": "olmo-2-1124-13b-instruct",
+      "between_policy_seed_ci": {
+        "hi": -0.6194169915321835,
+        "lo": -0.6725830084678165,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.646,
+        "point_pooled": -0.646,
+        "se": 0.009576011695899299
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "leduc",
+      "opponent": "cfr_ref",
+      "within_policy_hand_ci": {
+        "hi": -0.6286,
+        "lo": -0.663215,
+        "n": 200,
+        "point": -0.646,
+        "se": 0.009814874159859075
+      }
+    },
+    {
+      "arm": "olmo-2-1124-13b-instruct",
+      "between_policy_seed_ci": {
+        "hi": -0.5377442599366666,
+        "lo": -0.5922557400633335,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.5650000000000001,
+        "point_pooled": -0.565,
+        "se": 0.00981835016690685
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "leduc",
+      "opponent": "rl",
+      "within_policy_hand_ci": {
+        "hi": -0.54637,
+        "lo": -0.58341,
+        "n": 200,
+        "point": -0.565,
+        "se": 0.010841636426389243
+      }
+    },
+    {
+      "arm": "olmo-2-1124-13b-instruct",
+      "between_policy_seed_ci": {
+        "hi": -0.9327197572261847,
+        "lo": -0.9520802427738151,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.9423999999999999,
+        "point_pooled": -0.9424,
+        "se": 0.003487119154832542
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "liarsdice",
+      "opponent": "always_bet",
+      "within_policy_hand_ci": {
+        "hi": -0.934,
+        "lo": -0.9508099999999999,
+        "n": 200,
+        "point": -0.9424,
+        "se": 0.0045827621084574745
+      }
+    },
+    {
+      "arm": "olmo-2-1124-13b-instruct",
+      "between_policy_seed_ci": {
+        "hi": -0.6663523703077989,
+        "lo": -0.7520476296922012,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.7092,
+        "point_pooled": -0.7092,
+        "se": 0.015435025105259776
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "liarsdice",
+      "opponent": "bayesian",
+      "within_policy_hand_ci": {
+        "hi": -0.6903900000000001,
+        "lo": -0.72767,
+        "n": 200,
+        "point": -0.7092,
+        "se": 0.009939245393639043
+      }
+    },
+    {
+      "arm": "olmo-2-1124-13b-instruct",
+      "between_policy_seed_ci": {
+        "hi": -0.47053519575205266,
+        "lo": -0.5342648042479473,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.5024,
+        "point_pooled": -0.5024,
+        "se": 0.011478675881825405
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "liarsdice",
+      "opponent": "cfr_ref",
+      "within_policy_hand_ci": {
+        "hi": -0.47879,
+        "lo": -0.52642,
+        "n": 200,
+        "point": -0.5024,
+        "se": 0.011780176859205928
+      }
+    },
+    {
+      "arm": "olmo-2-1124-13b-instruct",
+      "between_policy_seed_ci": {
+        "hi": -0.4326527965257014,
+        "lo": -0.5225472034742986,
+        "method": "t_replicate",
+        "n": 5,
+        "n_replicates": 5,
+        "note": "",
+        "point": -0.47759999999999997,
+        "point_pooled": -0.4776,
+        "se": 0.01619135571840728
+      },
+      "cell_is_in_degenerate_cells": false,
+      "effective_replicates": {
+        "duplicate_groups": [],
+        "n_effective": 5,
+        "n_nominal": 5
+      },
+      "effective_seat_sample": {
+        "n_hands": 1000,
+        "n_hands_x_n_seeds": 5000,
+        "n_seeds": 5
+      },
+      "game": "liarsdice",
+      "opponent": "rl",
+      "within_policy_hand_ci": {
+        "hi": -0.45518,
+        "lo": -0.50007,
+        "n": 200,
+        "point": -0.4776,
+        "se": 0.012141537822842607
+      }
+    }
+  ],
+  "smoke_test_arm": "qwen2.5-14b-instruct",
+  "smoke_test_licensed_w": 1000,
+  "smoke_test_licensed_w_cleared_bar": true,
+  "smoke_test_rows": [
+    {
+      "_state_blind_share_value": 1.0,
+      "caveat": "{\"n_hand_bins\": 1, \"br_gap_trajectory\": [0.6624], \"lm_mean_trajectory\": [0.3376], \"trajectory_bin_n_hands\": [5000]}",
+      "cell_lm_mask_constant_share": "action is constant in `legal_mask` on 100.00% of this cell's LM rows",
+      "game": "darkhex",
+      "licensed": true,
+      "opponent": "cfr_ref",
+      "player": "LM",
+      "property": "P2_adaptivity_trajectory",
+      "smoke_test_w": 1000,
+      "status": "MEASURABLE_FLAWED",
+      "value": null
+    },
+    {
+      "_state_blind_share_value": 0.0,
+      "caveat": "{\"n_hand_bins\": 1, \"br_gap_trajectory\": [-0.030666666666666675], \"lm_mean_trajectory\": [0.364], \"trajectory_bin_n_hands\": [5000]}",
+      "cell_lm_mask_constant_share": "action is constant in `legal_mask` on 0.00% of this cell's LM rows",
+      "game": "kuhn",
+      "licensed": true,
+      "opponent": "always_bet",
+      "player": "LM",
+      "property": "P2_adaptivity_trajectory",
+      "smoke_test_w": 1000,
+      "status": "MEASURABLE_FLAWED",
+      "value": null
+    },
+    {
+      "_state_blind_share_value": 0.42948425376540394,
+      "caveat": "{\"n_hand_bins\": 1, \"br_gap_trajectory\": [4.376133333333333], \"lm_mean_trajectory\": [-0.8178], \"trajectory_bin_n_hands\": [5000]}",
+      "cell_lm_mask_constant_share": "action is constant in `legal_mask` on 42.95% of this cell's LM rows",
+      "game": "leduc",
+      "licensed": true,
+      "opponent": "bayesian",
+      "player": "LM",
+      "property": "P2_adaptivity_trajectory",
+      "smoke_test_w": 1000,
+      "status": "MEASURABLE_FLAWED",
+      "value": null
+    },
+    {
+      "_state_blind_share_value": 1.0,
+      "caveat": "{\"n_hand_bins\": 10, \"br_gap_trajectory\": [0.6599999999999999, 0.632, 0.6759999999999999, 0.5840000000000001, 0.64, 0.652, 0.688, 0.708, 0.652, 0.732], \"lm_mean_trajectory\": [0.34, 0.368, 0.324, 0.416, 0.36, 0.348, 0.312, 0.292, 0.348, 0.268], \"trajectory_bin_n_hands\": [500, 500, 500, 500, 500, 500, 500, 500, 500, 500]}",
+      "cell_lm_mask_constant_share": "action is constant in `legal_mask` on 100.00% of this cell's LM rows",
+      "game": "darkhex",
+      "licensed": false,
+      "opponent": "cfr_ref",
+      "player": "LM",
+      "property": "P2_adaptivity_trajectory",
+      "smoke_test_w": 100,
+      "status": "MEASURABLE_FLAWED",
+      "value": null
+    },
+    {
+      "_state_blind_share_value": 0.0,
+      "caveat": "{\"n_hand_bins\": 10, \"br_gap_trajectory\": [-0.0006666666666667043, -0.03266666666666668, 0.1333333333333333, -0.15466666666666667, -0.0586666666666667, -0.042666666666666686, 0.009333333333333305, -0.1906666666666667, -0.028666666666666674, 0.059333333333333294], \"lm_mean_trajectory\": [0.334, 0.366, 0.2, 0.488, 0.392, 0.376, 0.324, 0.524, 0.362, 0.274], \"trajectory_bin_n_hands\": [500, 500, 500, 500, 500, 500, 500, 500, 500, 500]}",
+      "cell_lm_mask_constant_share": "action is constant in `legal_mask` on 0.00% of this cell's LM rows",
+      "game": "kuhn",
+      "licensed": false,
+      "opponent": "always_bet",
+      "player": "LM",
+      "property": "P2_adaptivity_trajectory",
+      "smoke_test_w": 100,
+      "status": "MEASURABLE_FLAWED",
+      "value": null
+    },
+    {
+      "_state_blind_share_value": 0.42948425376540394,
+      "caveat": "{\"n_hand_bins\": 10, \"br_gap_trajectory\": [4.234333333333333, 4.416333333333333, 4.468333333333333, 4.540333333333333, 4.404333333333333, 4.336333333333333, 4.126333333333333, 4.7283333333333335, 4.568333333333333, 3.938333333333333], \"lm_mean_trajectory\": [-0.676, -0.858, -0.91, -0.982, -0.846, -0.778, -0.568, -1.17, -1.01, -0.38], \"trajectory_bin_n_hands\": [500, 500, 500, 500, 500, 500, 500, 500, 500, 500]}",
+      "cell_lm_mask_constant_share": "action is constant in `legal_mask` on 42.95% of this cell's LM rows",
+      "game": "leduc",
+      "licensed": false,
+      "opponent": "bayesian",
+      "player": "LM",
+      "property": "P2_adaptivity_trajectory",
+      "smoke_test_w": 100,
+      "status": "MEASURABLE_FLAWED",
+      "value": null
+    }
+  ],
+  "smoke_test_w100_also_run": true,
+  "w_justification_rows": [
+    {
+      "arm": "qwen2.5-14b-instruct",
+      "cell_is_in_degenerate_cells": false,
+      "floor": 0.02113764414498455,
+      "game": "darkhex",
+      "k": 1.0,
+      "n_hands_per_seed": 1000,
+      "opponent": "cfr_ref",
+      "spread": 0.02113764414498455,
+      "w": 1000
+    },
+    {
+      "arm": "qwen2.5-14b-instruct",
+      "cell_is_in_degenerate_cells": true,
+      "floor": 0.07277705682424922,
+      "game": "kuhn",
+      "k": 1.0,
+      "n_hands_per_seed": 1000,
+      "opponent": "always_bet",
+      "spread": 0.07277705682424922,
+      "w": 1000
+    },
+    {
+      "arm": "qwen2.5-14b-instruct",
+      "cell_is_in_degenerate_cells": false,
+      "floor": 0.23177726376847235,
+      "game": "leduc",
+      "k": 1.0,
+      "n_hands_per_seed": 1000,
+      "opponent": "bayesian",
+      "spread": 0.23177726376847235,
+      "w": 1000
+    },
+    {
+      "arm": "gemma-4-12b-it",
+      "cell_is_in_degenerate_cells": false,
+      "floor": 0.03264965543462901,
+      "game": "darkhex",
+      "k": 1.0,
+      "n_hands_per_seed": 1000,
+      "opponent": "cfr_ref",
+      "spread": 0.03264965543462901,
+      "w": 1000
+    },
+    {
+      "arm": "gemma-4-12b-it",
+      "cell_is_in_degenerate_cells": true,
+      "floor": 0.07277705682424922,
+      "game": "kuhn",
+      "k": 1.0,
+      "n_hands_per_seed": 1000,
+      "opponent": "always_bet",
+      "spread": 0.07277705682424922,
+      "w": 1000
+    },
+    {
+      "arm": "gemma-4-12b-it",
+      "cell_is_in_degenerate_cells": false,
+      "floor": 0.1860954056391506,
+      "game": "leduc",
+      "k": 1.0,
+      "n_hands_per_seed": 1000,
+      "opponent": "bayesian",
+      "spread": 0.1860954056391506,
+      "w": 1000
+    },
+    {
+      "arm": "mistral-nemo-instruct-2407",
+      "cell_is_in_degenerate_cells": false,
+      "floor": 0.033805325024321244,
+      "game": "darkhex",
+      "k": 1.0,
+      "n_hands_per_seed": 1000,
+      "opponent": "cfr_ref",
+      "spread": 0.033805325024321244,
+      "w": 1000
+    },
+    {
+      "arm": "mistral-nemo-instruct-2407",
+      "cell_is_in_degenerate_cells": true,
+      "floor": 0.0,
+      "game": "kuhn",
+      "k": 1.0,
+      "n_hands_per_seed": 1000,
+      "opponent": "always_bet",
+      "spread": 0.0,
+      "w": 25
+    },
+    {
+      "arm": "mistral-nemo-instruct-2407",
+      "cell_is_in_degenerate_cells": false,
+      "floor": 0.0,
+      "game": "leduc",
+      "k": 1.0,
+      "n_hands_per_seed": 1000,
+      "opponent": "bayesian",
+      "spread": 0.0,
+      "w": 25
+    },
+    {
+      "arm": "olmo-2-1124-13b-instruct",
+      "cell_is_in_degenerate_cells": false,
+      "floor": 0.029913207785190785,
+      "game": "darkhex",
+      "k": 1.0,
+      "n_hands_per_seed": 1000,
+      "opponent": "cfr_ref",
+      "spread": 0.029913207785190785,
+      "w": 1000
+    },
+    {
+      "arm": "olmo-2-1124-13b-instruct",
+      "cell_is_in_degenerate_cells": true,
+      "floor": 0.0,
+      "game": "kuhn",
+      "k": 1.0,
+      "n_hands_per_seed": 1000,
+      "opponent": "always_bet",
+      "spread": 0.0,
+      "w": 25
+    },
+    {
+      "arm": "olmo-2-1124-13b-instruct",
+      "cell_is_in_degenerate_cells": false,
+      "floor": 0.0,
+      "game": "leduc",
+      "k": 1.0,
+      "n_hands_per_seed": 1000,
+      "opponent": "bayesian",
+      "spread": 0.0,
+      "w": 25
+    }
+  ]
+}

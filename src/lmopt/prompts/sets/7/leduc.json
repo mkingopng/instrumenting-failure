@@ -1,0 +1,55 @@
+{
+  "game": "leduc",
+  "instruction": {
+    "rules": [
+      "You are playing Leduc poker, a two-player poker variant.\n\nRules:\n- {num_cards} cards: {rank_list_desc} (two of each). Each player is dealt one private card.\n- Before the deal each player puts 1 chip in the pot (the ante).\n- Round 1: both players bet with only their private card. Every bet or raise in round 1 is 2 chips.\n- Round 2: one community card is revealed face-up; both players bet again. Every bet or raise in round 2 is 4 chips.\n- Betting: check (free, only if nobody has bet this round), bet, call (match the current bet), raise (re-raise), or fold (give up the pot).\n- Maximum two bets/raises per round (check, bet, raise — then no more raises).\n- Showdown: a private card that pairs the community card wins. Otherwise the higher private card wins. Equal cards split the pot.\n- You win or lose exactly the chips that went into the pot.",
+      {
+        "wrapper": "objective",
+        "prefix": "\n\n",
+        "fields": {
+          "unit": "hand",
+          "currency": "chips"
+        }
+      }
+    ],
+    "options_facing_raise": "{FOLD} (give up), {CALL} (match the bet), or {RAISE} (re-raise)",
+    "options_facing_final": "{FOLD} (give up) or {CALL} (match the bet)",
+    "options_first": "{CHECK} (free) or {BET} (2 chips in round 1, 4 chips in round 2)"
+  },
+  "action_vocabulary": {
+    "FOLD": "FOLD",
+    "CALL": "CALL",
+    "RAISE": "RAISE",
+    "CHECK": "CHECK",
+    "BET": "BET",
+    "parse_synonyms": {
+      "CHECK": [
+        "PASS"
+      ]
+    }
+  },
+  "belief_question": [
+    "\n\nYour private card is {own_name}. The deck has two of each rank; of the {total_unseen} cards you have not seen, {deck_desc} remain unseen. What probability do you assign to your opponent's card being each rank? You cannot see their card.\nWork it out in three steps before you answer.\n1. Start from the deal alone: each unseen card is equally likely to be theirs, so before any betting a rank's chance is its unseen count divided by {total_unseen}. A rank with no unseen cards gets 0.\n",
+    {
+      "wrapper": "belief_update_steps"
+    },
+    "3. Make the numbers add up to about 1.\n",
+    {
+      "wrapper": "belief_assumption"
+    },
+    "Give all {num_ranks_word} ranks.",
+    {
+      "wrapper": "belief_format_head",
+      "prefix": " "
+    },
+    {
+      "wrapper": "belief_format_sum"
+    },
+    {
+      "wrapper": "belief_format_example"
+    },
+    "{belief_exemplar}"
+  ],
+  "belief_exemplar": "{\"<rank_A>\": 0.5, \"<rank_B>\": 0.3, \"<rank_C>\": 0.2}",
+  "display_scale": 1
+}

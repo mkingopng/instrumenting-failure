@@ -1,0 +1,57 @@
+{
+  "factor": 10,
+  "games": {
+    "kuhn": {
+      "phrases": {
+        "2 chips": [
+          "20 chips",
+          1
+        ],
+        "1 chip": [
+          "10 chips",
+          7
+        ]
+      },
+      "scale_rendered_magnitudes": false
+    },
+    "leduc": {
+      "phrases": {
+        "4 chips": [
+          "40 chips",
+          2
+        ],
+        "2 chips": [
+          "20 chips",
+          2
+        ],
+        "1 chip": [
+          "10 chips",
+          1
+        ]
+      },
+      "scale_rendered_magnitudes": true
+    },
+    "goofspiel": {
+      "phrases": {},
+      "scale_rendered_magnitudes": true
+    },
+    "liarsdice": {
+      "phrases": {
+        "1 point": [
+          "10 points",
+          2
+        ]
+      },
+      "scale_rendered_magnitudes": false
+    },
+    "darkhex": {
+      "phrases": {
+        "1 point": [
+          "10 points",
+          2
+        ]
+      },
+      "scale_rendered_magnitudes": false
+    }
+  }
+}

@@ -1,0 +1,120 @@
+# Arm roster for the contrast suites (instruct vs think, memory
+# rungs, seat contrasts). Read by src/lmopt/analysis/contrast/contrast_arms.py.
+#
+# Paths are relative to the repo root and name one arm directory each (the
+# loader globs *.parquet inside exactly that directory). A path that does not
+# exist is a loud refusal naming the arm, never an empty panel.
+#
+# `epoch` is a label, not a computed value: the loader reads the real
+# prompt_spec_hash / prompt_schema_version off the shards and refuses to
+# contrast arms whose hash sets differ.
+#
+# No exclusions are shipped. The exclusion mechanism stays and is tested, but no
+# arm is excluded here.
+
+# No instruct-vs-think arm exists on the version 7 ladder (three instruct models, no think
+# model), so suite 1 has nothing to contrast and this list is empty by design.
+arms: []
+
+# Memory-rung arms. Entries take the same keys as `arms` plus `rung`, one of
+# M0, M1, M2, M3 (lmopt.prompting.memory.MEMORY_RUNGS); suite 2 verifies the
+# declared rung against the arm's logged memory_rung column and refuses on
+# mismatch. Each path names one certified composite (all seeds of one model at one memory
+# level). Version 7 and version 8 share prompt_spec_hash 3dcdecc6..., so the epoch label is
+# the same; the version 8 M0, M1 and M2 composites are listed beside the version 7 ones.
+memory_arms:
+  - name: v7-M0-qwen2.5-14b-instruct
+    path: data/run_experiment/recycle-v7-m0/composite-qwen2.5-14b-instruct
+    role: memory
+    epoch: v7-3dcdecc6
+    rung: M0
+  - name: v7-M0-olmo-2-1124-13b-instruct
+    path: data/run_experiment/recycle-v7-m0/composite-olmo-2-1124-13b-instruct
+    role: memory
+    epoch: v7-3dcdecc6
+    rung: M0
+  - name: v7-M0-mistral-nemo-instruct-2407
+    path: data/run_experiment/recycle-v7-m0/composite-mistral-nemo-instruct-2407
+    role: memory
+    epoch: v7-3dcdecc6
+    rung: M0
+  - name: v7-M1-qwen2.5-14b-instruct
+    path: data/run_experiment/recycle-v7-m1/composite-qwen2.5-14b-instruct
+    role: memory
+    epoch: v7-3dcdecc6
+    rung: M1
+  - name: v7-M1-olmo-2-1124-13b-instruct
+    path: data/run_experiment/recycle-v7-m1/composite-olmo-2-1124-13b-instruct
+    role: memory
+    epoch: v7-3dcdecc6
+    rung: M1
+  - name: v7-M1-mistral-nemo-instruct-2407
+    path: data/run_experiment/recycle-v7-m1/composite-mistral-nemo-instruct-2407
+    role: memory
+    epoch: v7-3dcdecc6
+    rung: M1
+  - name: v7-M2-qwen2.5-14b-instruct
+    path: data/run_experiment/recycle-v7-m2/composite-qwen2.5-14b-instruct
+    role: memory
+    epoch: v7-3dcdecc6
+    rung: M2
+  - name: v7-M2-olmo-2-1124-13b-instruct
+    path: data/run_experiment/recycle-v7-m2/composite-olmo-2-1124-13b-instruct
+    role: memory
+    epoch: v7-3dcdecc6
+    rung: M2
+  - name: v7-M2-mistral-nemo-instruct-2407
+    path: data/run_experiment/recycle-v7-m2/composite-mistral-nemo-instruct-2407
+    role: memory
+    epoch: v7-3dcdecc6
+    rung: M2
+  - name: v8-M0-qwen2.5-14b-instruct
+    path: data/run_experiment/recycle-v8-m0/composite-qwen2.5-14b-instruct
+    role: memory
+    epoch: v7-3dcdecc6
+    rung: M0
+  - name: v8-M0-olmo-2-1124-13b-instruct
+    path: data/run_experiment/recycle-v8-m0/composite-olmo-2-1124-13b-instruct
+    role: memory
+    epoch: v7-3dcdecc6
+    rung: M0
+  - name: v8-M0-mistral-nemo-instruct-2407
+    path: data/run_experiment/recycle-v8-m0/composite-mistral-nemo-instruct-2407
+    role: memory
+    epoch: v7-3dcdecc6
+    rung: M0
+  - name: v8-M1-qwen2.5-14b-instruct
+    path: data/run_experiment/recycle-v8-m1/composite-qwen2.5-14b-instruct
+    role: memory
+    epoch: v7-3dcdecc6
+    rung: M1
+  - name: v8-M1-olmo-2-1124-13b-instruct
+    path: data/run_experiment/recycle-v8-m1/composite-olmo-2-1124-13b-instruct
+    role: memory
+    epoch: v7-3dcdecc6
+    rung: M1
+  - name: v8-M1-mistral-nemo-instruct-2407
+    path: data/run_experiment/recycle-v8-m1/composite-mistral-nemo-instruct-2407
+    role: memory
+    epoch: v7-3dcdecc6
+    rung: M1
+  - name: v8-M2-qwen2.5-14b-instruct
+    path: data/run_experiment/recycle-v8-m2/composite-qwen2.5-14b-instruct
+    role: memory
+    epoch: v7-3dcdecc6
+    rung: M2
+  - name: v8-M2-olmo-2-1124-13b-instruct
+    path: data/run_experiment/recycle-v8-m2/composite-olmo-2-1124-13b-instruct
+    role: memory
+    epoch: v7-3dcdecc6
+    rung: M2
+  - name: v8-M2-mistral-nemo-instruct-2407
+    path: data/run_experiment/recycle-v8-m2/composite-mistral-nemo-instruct-2407
+    role: memory
+    epoch: v7-3dcdecc6
+    rung: M2
+
+# Free text written verbatim into the contrast suite's notes.md.
+notes:
+  - "Every arm here is a certified composite of the version 7 ladder (and the version 8 M0, M1
+    and M2 composites). Suite 1 (instruct vs think) is empty because the ladder has no think model."

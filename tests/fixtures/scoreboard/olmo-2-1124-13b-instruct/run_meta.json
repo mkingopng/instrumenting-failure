@@ -1,0 +1,12 @@
+{
+  "data_dir": "data/run_experiment/recycle-v6-m1/composite-olmo-2-1124-13b-instruct",
+  "condition": {
+    "model_id": "allenai/OLMo-2-1124-13B-Instruct",
+    "memory_rung": "M1",
+    "n_hands": 2000,
+    "n_seeds": 1,
+    "n_pieces": 10,
+    "probe_type": "none",
+    "source": "backfilled from data/run_experiment/recycle-v6-m1/composite-olmo-2-1124-13b-instruct/run_meta.json"
+  }
+}

@@ -1,0 +1,31 @@
+# The uniform-random agent's own P3 regret, per (game, opponent).
+# This run is the source of
+# `configs/anchors/p3_sentinel_anchors.json`, the reference point for the P3
+# margin (LM regret minus sentinel regret for the same cell).
+#
+# It mirrors the ladder's conditions: hands, seed count, seat mode, reference
+# iteration counts, the five canonical games and all four opponents. No model,
+# no GPU. `darkhex` is the plain `board_size=2` key.
+#
+# One invocation collects all 100 shards (5 games x 4 opponents x 5 seeds):
+#   .venv/bin/python scripts/run_sweep.py --config configs/p3_sentinel.yaml
+
+games: [kuhn, leduc, goofspiel, liarsdice, darkhex]
+opponents: [cfr_ref, bayesian, rl, always_bet]
+
+agent0: random              # the sentinel; no model, no vllm_base_url, no GPU
+seat_mode: alternate
+
+n_hands: 2000
+n_seeds: 5
+seed: 42
+
+cfr_iters: 1000
+rl_iterations: 1000
+cfr_cache_dir: data/cfr_policies
+rl_cache_dir: data/rl_policies
+
+max_workers: 1               # serial: this is a reference measurement, not a benchmark
+backend: cpu-random-sentinel  # provenance, not a default inherited from the GPU box
+
+out_dir: data/p3_sentinel

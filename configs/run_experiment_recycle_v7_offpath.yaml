@@ -1,0 +1,56 @@
+# run_experiment_recycle_v7_offpath: the off-path drive probe for one game, at memory level M0.
+# The lm is driven into a low-probability subgame by scripted opening actions, then plays on
+# against cfr_ref. scripts/collection_job.py renders this template once per game (kuhn, leduc,
+# goofspiel, liarsdice, darkhex) inside one job, so a job holds five sweeps; Dark Hex runs on
+# its existing 2x2 board.
+# One job is one seed of one model on one H200: n_seeds 1 and a distinct out_root per game and
+# array index.
+# Placeholders filled by scripts/collection_job.py:
+#   __MODEL_ID__ __REVISION__ __PORT__ __SEED__ __N_HANDS__ __N_SEEDS__ __OUT_ROOT__ __PILOT_DIR__
+#   __GAME__ __DRIVE_OPENINGS__ __SEAT_MODE__
+# The exact-policy pass is off: driven rows are outside the canonical population.
+models:
+  - id: __MODEL_ID__
+    vllm_base_url: http://localhost:__PORT__/v1
+    enabled: true
+    pilot_dir: __PILOT_DIR__
+    served_weights_revision: __REVISION__
+
+games: [__GAME__]
+opponents: [cfr_ref]
+probe:
+  type: offpath_drive
+drive_openings: __DRIVE_OPENINGS__
+agent0: lm
+elicitation_mode: sibling
+max_retries: 3
+temperature: 0.0
+n_hands: __N_HANDS__
+n_seeds: __N_SEEDS__
+seed: __SEED__
+seat_mode: __SEAT_MODE__
+memory_rung: __MEMORY_RUNG__
+memory_window_k: 5
+max_workers: 32
+request_timeout_s: 900
+belief_protocol: free
+runner: local-pool
+backend: katana-vllm
+serving:
+  provider: pbs-injob
+  serving_env:
+    vllm: "0.31.0"
+    torch: "2.13.0"
+    python: "3.13"
+exact_policy:
+  enabled: false
+out_root: __OUT_ROOT__
+cfr_iters: 1000
+rl_iterations: 1000
+cfr_cache_dir: data/cfr_policies
+rl_cache_dir: data/rl_policies
+require_cache_hit: true                # the sweep's parent process fails on a cold reference cache instead of solving
+wandb:
+  enabled: false
+  project: lmopt
+  mode: online

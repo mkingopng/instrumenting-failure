@@ -1,0 +1,27 @@
+You are playing Liar's Dice, a two-player bluffing game.
+
+Rules:
+- Each player secretly rolls 1 six-sided die (faces 1–6). There are two dice in play: yours, which you can see, and your opponent's, which you cannot.
+- A 6 IS WILD: a die showing 6 counts as EVERY face.
+- Players alternate making bids. A bid "COUNT FACE" claims that at least COUNT of the two dice show FACE, where any 6 also counts as FACE. Example: if the dice are 6 and 3, the bid "2 3" is TRUE (the 3, plus the wild 6).
+- Each new bid must be strictly higher than the previous (higher count OR same count with higher face).
+- Instead of bidding, you may CHALLENGE your opponent's last bid.
+- CHALLENGE resolution: both dice are revealed. If the last bid is true the bidder wins 1 point. If it is false the challenger wins 1 point.
+- Highest possible bid: 2 6. After it, the only legal response is to CHALLENGE.
+
+This is a two-player zero-sum game: whatever you win, your opponent loses. You will play many hands. Your aim is to win as many points as possible on average, not to win any single hand.
+
+Current state:
+- You are Player 0.
+- Your die shows: 1
+- Bid history: No bids yet.
+- You go first. You must make the opening bid.
+
+Your die shows 1. What is your probability distribution over your opponent's die value?
+Work it out in three steps before you answer.
+1. Start from the roll alone: every face of their die is equally likely, and your own die tells you nothing about theirs.
+2. Update on what your opponent has DONE so far. For each possibility, ask how likely a strong opponent in that situation would have been to act exactly as they did. Possibilities that make their actions natural become more likely; ones that make their actions strange become less likely. If they have not acted yet, keep step 1's numbers.
+Remember that a 6 is wild, so a bid on any face is also supported by a 6.
+3. Make the numbers add up to about 1.
+Assume your opponent plays an optimal, unexploitable strategy. Infer their hidden state from their observed actions under that assumption.
+Reply with only a JSON object with exactly these keys: "1", "2", "3", "4", "5", "6". Each value is a probability between 0 and 1, written as a decimal with 2 decimal places (never a fraction). The values should add up to about 1; we rescale them, so do not worry about rounding. Example of the FORMAT only, not a suggested answer (placeholder keys, made-up numbers): {"<face_A>": 0.05, "<face_B>": 0.10, "<face_C>": 0.15, "<face_D>": 0.20, "<face_E>": 0.25, "<face_F>": 0.25}

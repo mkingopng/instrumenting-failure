@@ -1,0 +1,25 @@
+You are playing Kuhn poker, a simplified card game.
+
+Rules:
+- Three cards: Jack (lowest), Queen, King (highest).
+- Each player is dealt one card secretly. The third card is not in play.
+- Before the deal each player puts 1 chip in the pot (the ante).
+- Player 0 acts first and may CHECK (free) or BET (stake 1 chip).
+- After a CHECK, the other player may CHECK or BET (stake 1 chip). After a BET, the other player may CALL (stake 1 chip to match, go to showdown) or FOLD (give up the pot).
+- If nobody bets, or a bet is matched, the higher card wins the pot.
+- The winner gains 1 chip if nobody bet or someone gave up the pot, and 2 chips if a bet was matched. The loser loses the same amount.
+
+This is a two-player zero-sum game: whatever you win, your opponent loses. You will play many hands. Your aim is to win as many chips as possible on average, not to win any single hand.
+
+Current state:
+- You are Player 0.
+- Your card: Jack
+- History: No actions yet.
+- You act first.
+
+Your legal actions: CHECK (free, pass to opponent) or BET (stake 1 chip)
+
+Your match so far, against the same opponent in every hand:
+- 4 hands played. Your total: -0.5 chips. Last hand: +0.5 chips.
+
+Your legal responses right now: CHECK, BET. Reply with exactly one of those, copied exactly, and nothing else. No explanation and no reasoning.

@@ -1,0 +1,149 @@
+{
+  "derivation": "floor(game, property) = 0.8 x the MINIMUM of the three v7 M0 arms' paired_coverage_seed_mean for that cell (never the median: a median flips exactly one of three ACCEPTED v7 arms per cell by construction, measuring rank among v7's own arms rather than sufficiency). min x margin is strictly below the lowest value any v7 arm reached, so it excludes ZERO v7 cells. kuhn exempt, fixed at 1.0.",
+  "falsification": {
+    "anchor": "experiment 8's own M0 arms (temperature not yet fixed), never M1/M2 (P1/P4 are M0-only)",
+    "history_of_rejected_conditions": [
+      {
+        "condition": "majority-or-none (0, 2, or 3 of 3) below a MEDIAN-derived floor",
+        "failure": "fires on 5 of 8 outcomes under the null (each model ~50% likely to fall below a true median: P(0)+P(2)+P(3) = 1/8+3/8+1/8 = 5/8 = 62.5%) -- a check that cries wolf more often than not"
+      },
+      {
+        "condition": "re-derive if the floor moves by more than a stated margin once M1/M2 are scored",
+        "failure": "can never fire at all: P1/P4 are M0-only, so M1/M2 never produce new P1/P4 coverage numbers to re-derive against"
+      },
+      {
+        "condition": "extremes-only (0 of 3, or 3 of 3) below a MEDIAN-derived floor",
+        "failure": "fired on SUCCESS once the derivation changed to a min-times-margin floor sitting below every accepted v7 arm: under that floor, '0 of 3 below' is the EXPECTED, healthy outcome, not a defect, so this condition would flag a normal result as requiring re-derivation"
+      }
+    ],
+    "trigger": "a (game, property) floor is re-derived if a MAJORITY (>= 2 of 3) of experiment 8's models fall below it. A single model below is the floor doing its job (that cell reads inadmissible); a majority means either the floor or experiment 8's coverage structure is wrong."
+  },
+  "floors": {
+    "darkhex": {
+      "P1_invariance": {
+        "floor": 0.192,
+        "margin": 0.8,
+        "minimum": 0.24,
+        "per_model": {
+          "mistral-nemo-instruct-2407": 0.971429,
+          "olmo-2-1124-13b-instruct": 0.24,
+          "qwen2.5-14b-instruct": 0.613889
+        },
+        "source": "min_times_margin"
+      },
+      "P4_payoff_sensitivity": {
+        "floor": 0.7320000000000001,
+        "margin": 0.8,
+        "minimum": 0.915,
+        "per_model": {
+          "mistral-nemo-instruct-2407": 0.971429,
+          "olmo-2-1124-13b-instruct": 0.915,
+          "qwen2.5-14b-instruct": 0.933333
+        },
+        "source": "min_times_margin"
+      }
+    },
+    "goofspiel": {
+      "P1_invariance": {
+        "floor": 0.07702160000000001,
+        "margin": 0.8,
+        "minimum": 0.096277,
+        "per_model": {
+          "mistral-nemo-instruct-2407": 0.876346,
+          "olmo-2-1124-13b-instruct": 0.096277,
+          "qwen2.5-14b-instruct": 0.143974
+        },
+        "source": "min_times_margin"
+      },
+      "P4_payoff_sensitivity": {
+        "floor": 0.6005544,
+        "margin": 0.8,
+        "minimum": 0.750693,
+        "per_model": {
+          "mistral-nemo-instruct-2407": 0.876346,
+          "olmo-2-1124-13b-instruct": 0.750693,
+          "qwen2.5-14b-instruct": 0.876346
+        },
+        "source": "min_times_margin"
+      }
+    },
+    "kuhn": {
+      "P1_invariance": {
+        "floor": 1.0,
+        "per_model": {
+          "mistral-nemo-instruct-2407": 1.0,
+          "olmo-2-1124-13b-instruct": 1.0,
+          "qwen2.5-14b-instruct": 1.0
+        },
+        "reason": "kuhn's info-set space is small enough that full coverage is the expected case, not evidence of unusually careful collection; exempt from the median formula and from the re-derivation falsification check, per the darkhex-degeneracy precedent",
+        "source": "exempt"
+      },
+      "P4_payoff_sensitivity": {
+        "floor": 1.0,
+        "per_model": {
+          "mistral-nemo-instruct-2407": 1.0,
+          "olmo-2-1124-13b-instruct": 1.0,
+          "qwen2.5-14b-instruct": 1.0
+        },
+        "reason": "kuhn's info-set space is small enough that full coverage is the expected case, not evidence of unusually careful collection; exempt from the median formula and from the re-derivation falsification check, per the darkhex-degeneracy precedent",
+        "source": "exempt"
+      }
+    },
+    "leduc": {
+      "P1_invariance": {
+        "floor": 0.3168608,
+        "margin": 0.8,
+        "minimum": 0.396076,
+        "per_model": {
+          "mistral-nemo-instruct-2407": 0.503792,
+          "olmo-2-1124-13b-instruct": 0.396076,
+          "qwen2.5-14b-instruct": 0.523789
+        },
+        "source": "min_times_margin"
+      },
+      "P4_payoff_sensitivity": {
+        "floor": 0.4821432,
+        "margin": 0.8,
+        "minimum": 0.602679,
+        "per_model": {
+          "mistral-nemo-instruct-2407": 0.602679,
+          "olmo-2-1124-13b-instruct": 0.641376,
+          "qwen2.5-14b-instruct": 0.625143
+        },
+        "source": "min_times_margin"
+      }
+    },
+    "liarsdice": {
+      "P1_invariance": {
+        "floor": 0.4711784,
+        "margin": 0.8,
+        "minimum": 0.588973,
+        "per_model": {
+          "mistral-nemo-instruct-2407": 0.820099,
+          "olmo-2-1124-13b-instruct": 0.588973,
+          "qwen2.5-14b-instruct": 0.607087
+        },
+        "source": "min_times_margin"
+      },
+      "P4_payoff_sensitivity": {
+        "floor": 0.4390712,
+        "margin": 0.8,
+        "minimum": 0.548839,
+        "per_model": {
+          "mistral-nemo-instruct-2407": 0.836396,
+          "olmo-2-1124-13b-instruct": 0.548839,
+          "qwen2.5-14b-instruct": 0.647152
+        },
+        "source": "min_times_margin"
+      }
+    }
+  },
+  "generated_utc": "2026-10-01T11:52:30.317315+00:00",
+  "margin_is_proportional_not_absolute": "coverage is a fraction bounded in [0, 1]; an absolute margin would push a low-coverage cell's floor to or below zero and remove the floor precisely where coverage is thinnest. A proportional margin is tightest where coverage is already lowest (e.g. goofspiel P1: min 0.096, floor 0.077, gap 0.019; leduc P1: min 0.396, floor 0.317, gap 0.079) -- the opposite of what an absolute safety margin usually does, but the intended behaviour here, not a flaw: a pilot reaching far fewer shared info-sets than any accepted v7 arm did is exactly the case the floor exists to catch, and that case is most likely on a cell whose own coverage is already thin.",
+  "source_models": [
+    "qwen2.5-14b-instruct",
+    "olmo-2-1124-13b-instruct",
+    "mistral-nemo-instruct-2407"
+  ],
+  "source_root": "analysis/board-20260929-t8a"
+}

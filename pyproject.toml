@@ -1,0 +1,111 @@
+[project]
+name = "lm-optimality-tournament"
+version = "0.1.0"
+description = "Research harness pitting open-weight LMs against game-theoretic agents across imperfect-information games, scored against a CFR equilibrium reference."
+requires-python = ">=3.13,<3.14"
+
+dependencies = [
+    "numpy>=2.4.6,<2.5",
+    # Wheels: Linux x86_64/aarch64, macOS arm64, Windows x86_64. Anywhere else (Intel macOS,
+    # Windows on ARM) it builds from source and needs CMake and a C++ toolchain.
+    "open_spiel==2.0.2",
+    # Imported at module level by the package itself (`import lmopt.agents` needs openai,
+    # the row logging needs polars, the configs are YAML), so they are not optional.
+    "openai==3.8.0",
+    "polars==1.44.1",
+    "pyyaml>=6.0.3,<7",
+    "scipy>=1.18.1,<2",
+]
+
+[project.optional-dependencies]
+
+dev = [
+    "pytest>=9.1.1,<10",
+    "pytest-cov==7.1.0",
+    "pytest-xdist>=3.8.0",
+    "polars==1.44.1",
+    "pyarrow==25.0.1",
+    "openai==3.8.0",
+    "tqdm==4.70.0",
+    "cvxpy==1.9.2",
+    "pandas==3.0.5",
+    "transformers==5.16.1",
+    "ruff==0.16.9",
+    "mypy==2.3.1",
+    "black==26.5.1",
+]
+# vLLM publishes Linux wheels only (and pulls the CUDA stack), so it is confined to this extra
+# and to Linux: on macOS and Windows the extra installs nothing and the harness talks to a
+# vLLM server running elsewhere through the OpenAI-compatible API.
+serve = ["vllm==0.31.0; sys_platform == 'linux'"]
+orchestration = ["ray==2.58.0"]
+tracking = ["wandb==0.29.0"]
+data = [
+    "polars==1.44.1",
+    "pyarrow==25.0.1"
+]
+
+
+[build-system]
+requires = ["setuptools==84.0.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# The prompt sets are data files inside the package (src/lmopt/prompts/sets/<n>/), read
+# through importlib.resources; an installed wheel must carry them or the harness renders
+# nothing. tests/test_prompt_sets.py checks every file of the live set matches one of these.
+[tool.setuptools.package-data]
+"lmopt.prompts" = ["sets/*/*.json", "sets/*/*.md", "sets/*/*/*.json", "sets/*/rendered/*.txt"]
+
+[tool.ruff]
+# One line length for ruff and black. E501 is not selected, so ruff never fights the formatter.
+line-length = 88
+target-version = "py313"
+
+[tool.ruff.lint]
+# Real defects only: undefined names, unused imports and variables, syntax errors, a zip() with no
+# strict= (B905: a silent zip drops the tail of the longer input) and a subprocess.run() with no
+# check= (PLW1510: an ignored exit status reads as success).
+select = ["F", "E9", "B905", "PLW1510"]
+
+[tool.black]
+line-length = 88
+target-version = ["py313"]
+# The reference cache keys every solved and trained reference by a SHA-256 of these three
+# files' bytes (policy_cache.py `code_hash`). Reformatting any of them changes the hash and
+# invalidates every warmed reference, so collection jobs refuse until the caches are rewarmed.
+force-exclude = '''
+(
+    src/lmopt/games/cfr\.py
+  | src/lmopt/games/policy_cache\.py
+  | src/lmopt/agents/rl_selfplay\.py
+)
+'''
+
+[tool.mypy]
+python_version = "3.13"
+files = ["src", "scripts"]
+# Third-party packages without type stubs (pyspiel, polars extensions, vllm clients) are
+# treated as Any rather than failing the run.
+ignore_missing_imports = true
+# Modules that still carry type errors.
+[[tool.mypy.overrides]]
+module = [
+    "lmopt.prompting.kuhn_deep",
+]
+ignore_errors = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# -rs: print skip reasons, so a skip cannot read as a pass. `coverage_run` tests (the long
+# semi-synthetic coverage and mutation runs) are deselected here and run by `make validate-coverage`,
+# which passes its own `-m`; `make test` passes `-m "not slow"`, and those tests are slow too.
+addopts = "-q -rs -m 'not coverage_run' --dist loadfile"
+# Put this checkout first on sys.path so tests import its own scripts/*.py.
+pythonpath = ["."]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "coverage_run: the long semi-synthetic coverage and mutation runs; deselected by default, run by `make validate-coverage`",
+]

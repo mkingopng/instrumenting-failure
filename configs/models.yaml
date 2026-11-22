@@ -1,0 +1,20 @@
+# Per-model registry read by scripts/run_experiment.py.
+
+# Expected chat_template_hash per model id. run_experiment.py passes the pin to run_sweep as
+# --expected-chat-template-hash; run_sweep compares it with the hash it resolves from the live
+# endpoint at startup and aborts on a mismatch. A model with no pin gets one loud not-pinned
+# line with the measured hash, and the run continues. Changing a pin (a new template revision)
+# makes new arms incomparable with those already collected.
+# For a chat_template_kwargs variant the key is model_id?chat_template_kwargs=<sorted-json>.
+expected_chat_template_hash:
+  Qwen/Qwen2.5-14B-Instruct: "44113a794b0464ddf27a1ddf1b02306493efa44b9923080ead3320dbd71907a2"
+  allenai/OLMo-2-1124-13B-Instruct: "e14f20bc8841167dbc4d39e8336583835156f5531bd18eab1b147430981e48af"
+  mistralai/Mistral-Nemo-Instruct-2407: "dab2d9976dad4b788dee31f3f648f187c9afac3042cabb972c4041186d479dd3"
+
+# Serving and decode settings for the three models of the paper. max_model_len is the served
+# window and equals `MODELS` in scripts/collection_job.py; action_max_tokens and
+# belief_max_tokens are the decode budgets run_experiment.py passes to run_sweep.
+fullsize_models:
+  Qwen/Qwen2.5-14B-Instruct: {dtype: bfloat16, max_model_len: 8192, action_max_tokens: 1024, belief_max_tokens: 2048}
+  allenai/OLMo-2-1124-13B-Instruct: {dtype: bfloat16, max_model_len: 4096, action_max_tokens: 1024, belief_max_tokens: 2048}
+  mistralai/Mistral-Nemo-Instruct-2407: {dtype: bfloat16, max_model_len: 8192, action_max_tokens: 1024, belief_max_tokens: 2048}
